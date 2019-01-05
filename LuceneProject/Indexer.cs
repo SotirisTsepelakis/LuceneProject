@@ -10,6 +10,7 @@ namespace LuceneProject
 {
     public class Indexer : IDisposable
     {
+        private IndexWriter writer;
         public String IndexDirectory { get; set; }
         public String DataDirectory { get; set; }
 
