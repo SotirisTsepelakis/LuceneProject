@@ -125,6 +125,12 @@ namespace LuceneProject
             this.articlesTableAdapter.Fill(this.cyclopediaBaseDataSet.Articles);
 
         }
+
+        private void GoTo_Click(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            f.Show();
+        }
     }
 }
 

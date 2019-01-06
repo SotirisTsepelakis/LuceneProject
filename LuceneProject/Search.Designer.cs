@@ -42,6 +42,7 @@
             this.articlesTableAdapter = new LuceneProject.CyclopediaBaseDataSetTableAdapters.ArticlesTableAdapter();
             this.favoritesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.favoritesTableAdapter = new LuceneProject.CyclopediaBaseDataSetTableAdapters.FavoritesTableAdapter();
+            this.GoTo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.cyclopediaBaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyclopediaBaseDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articlesBindingSource)).BeginInit();
@@ -52,8 +53,33 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "reere",
-            "gege"});
+            "Arts‎ ",
+            "Business‎ ",
+            "Concepts‎",
+            "Culture‎ ",
+            "Education",
+            "Entertainment‎",
+            "Events‎ ",
+            "Geography‎ ",
+            "Health",
+            "History‎",
+            "Humanities‎ ",
+            "Language‎",
+            "Law‎",
+            "Life‎ ",
+            "Mathematics‎",
+            "Nature‎",
+            "People‎",
+            "Philosophy‎",
+            "Politics‎",
+            "Reference‎ ",
+            "Religion‎",
+            "Science‎ ",
+            "Society‎ ",
+            "Sports‎",
+            "Technology‎ ",
+            "Universe‎ ",
+            "World‎ "});
             this.comboBox1.Location = new System.Drawing.Point(405, 336);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
@@ -142,11 +168,22 @@
             // 
             this.favoritesTableAdapter.ClearBeforeFill = true;
             // 
+            // GoTo
+            // 
+            this.GoTo.Location = new System.Drawing.Point(672, 383);
+            this.GoTo.Name = "GoTo";
+            this.GoTo.Size = new System.Drawing.Size(75, 23);
+            this.GoTo.TabIndex = 14;
+            this.GoTo.Text = "GoTo";
+            this.GoTo.UseVisualStyleBackColor = true;
+            this.GoTo.Click += new System.EventHandler(this.GoTo_Click);
+            // 
             // Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.GoTo);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.FavoriteButton);
@@ -181,5 +218,6 @@
         private CyclopediaBaseDataSetTableAdapters.ArticlesTableAdapter articlesTableAdapter;
         private System.Windows.Forms.BindingSource favoritesBindingSource;
         private CyclopediaBaseDataSetTableAdapters.FavoritesTableAdapter favoritesTableAdapter;
+        private System.Windows.Forms.Button GoTo;
     }
 }
