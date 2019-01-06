@@ -29,6 +29,17 @@ namespace LuceneProject
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
+            string category = textBox1.Text;
+            dataGridView1.DataSource = articlesTableAdapter.GetDataByCategory(category);
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+                       
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'cyclopediaBaseDataSet1.Articles' table. You can move, or remove it, as needed.
+            this.articlesTableAdapter.Fill(this.cyclopediaBaseDataSet.Articles);
 
         }
     }
