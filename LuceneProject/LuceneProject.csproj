@@ -58,12 +58,6 @@
     <Compile Include="Favorites.Designer.cs">
       <DependentUpon>Favorites.cs</DependentUpon>
     </Compile>
-    <Compile Include="SearchBase.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SearchBase.Designer.cs">
-      <DependentUpon>SearchBase.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormInGreek.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,17 +72,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Search.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Search.Designer.cs">
-      <DependentUpon>Search.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Favorites.resx">
       <DependentUpon>Favorites.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SearchBase.resx">
-      <DependentUpon>SearchBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInGreek.resx">
       <DependentUpon>FormInGreek.cs</DependentUpon>
@@ -105,9 +90,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Search.resx">
-      <DependentUpon>Search.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="CyclopediaBaseDataSet.xsc">
       <DependentUpon>CyclopediaBaseDataSet.xsd</DependentUpon>
     </None>
