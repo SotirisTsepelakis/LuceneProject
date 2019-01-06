@@ -11,7 +11,7 @@ namespace LuceneProject
     public class Indexer : IDisposable
     {
         private IndexWriter writer;
-        public String IndexDirectory { get; set; }
+        public String IndexDirectory = "C:\\Users\\sotiris\\source\\repos\\LuceneTest\\LuceneTest\\bin\\Debug\\Index";
         public String DataDirectory { get; set; }
 
         public Indexer() {
