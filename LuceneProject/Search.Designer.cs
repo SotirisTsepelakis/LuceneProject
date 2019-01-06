@@ -43,6 +43,7 @@
             this.favoritesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.favoritesTableAdapter = new LuceneProject.CyclopediaBaseDataSetTableAdapters.FavoritesTableAdapter();
             this.GoTo = new System.Windows.Forms.Button();
+            this.Myfavs = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.cyclopediaBaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyclopediaBaseDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articlesBindingSource)).BeginInit();
@@ -178,11 +179,22 @@
             this.GoTo.UseVisualStyleBackColor = true;
             this.GoTo.Click += new System.EventHandler(this.GoTo_Click);
             // 
+            // Myfavs
+            // 
+            this.Myfavs.Location = new System.Drawing.Point(672, 413);
+            this.Myfavs.Name = "Myfavs";
+            this.Myfavs.Size = new System.Drawing.Size(75, 23);
+            this.Myfavs.TabIndex = 15;
+            this.Myfavs.Text = "MyFavs";
+            this.Myfavs.UseVisualStyleBackColor = true;
+            this.Myfavs.Click += new System.EventHandler(this.Myfavs_Click);
+            // 
             // Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Myfavs);
             this.Controls.Add(this.GoTo);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.richTextBox1);
@@ -219,5 +231,6 @@
         private System.Windows.Forms.BindingSource favoritesBindingSource;
         private CyclopediaBaseDataSetTableAdapters.FavoritesTableAdapter favoritesTableAdapter;
         private System.Windows.Forms.Button GoTo;
+        private System.Windows.Forms.Button Myfavs;
     }
 }

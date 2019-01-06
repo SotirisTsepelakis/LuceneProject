@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LuceneProject
 {
-    public partial class Form1 : Form
+    public partial class SearchBase : Form
     {
-        public Form1()
+        public SearchBase()
         {
             InitializeComponent();
         }
@@ -40,7 +40,12 @@ namespace LuceneProject
         {
             // TODO: This line of code loads data into the 'cyclopediaBaseDataSet1.Articles' table. You can move, or remove it, as needed.
             this.articlesTableAdapter.Fill(this.cyclopediaBaseDataSet.Articles);
+        }
 
+        private void ShowFavs_Click(object sender, EventArgs e)
+        {
+            Favorites f = new Favorites();
+            f.Show();
         }
     }
 }

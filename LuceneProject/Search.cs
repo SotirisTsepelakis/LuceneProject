@@ -97,7 +97,7 @@ namespace LuceneProject
 
         private void FavoriteButton_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text = "";
+            
             textBox1.Text = textBox1.Text.ToLower();
             var webclient = new WebClient();
             var pageSourceCode = webclient.DownloadString("http://en.wikipedia.org/w/api.php?format=xml&action=query&prop=extracts&titles=" + textBox1.Text + "&redirects=true");
@@ -106,14 +106,14 @@ namespace LuceneProject
 
             XmlNodeList pagelist = doc.SelectNodes("//page");
             string title = "";
-
+            string content = richTextBox1.Text;
             foreach (XmlNode page in pagelist)
             {
                 title = page.Attributes["title"].InnerText;
 
             }
 
-            favoritesTableAdapter.InsertQuery(1, title);
+            favoritesTableAdapter.InsertQuery(1, title,content);
             this.favoritesTableAdapter.Fill(this.cyclopediaBaseDataSet.Favorites);
         }
 
@@ -128,8 +128,14 @@ namespace LuceneProject
 
         private void GoTo_Click(object sender, EventArgs e)
         {
-            Form1 f = new Form1();
+            SearchBase f = new SearchBase();
             f.Show();
+        }
+
+        private void Myfavs_Click(object sender, EventArgs e)
+        {
+            Favorites f1 = new Favorites();
+            f1.Show();
         }
     }
 }
