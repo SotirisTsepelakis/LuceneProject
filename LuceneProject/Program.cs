@@ -16,7 +16,7 @@ namespace LuceneProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Search());
+            Application.Run(new MainForm());
         }
     }
 }

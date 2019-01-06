@@ -54,24 +54,27 @@
             this.comboBox1.Items.AddRange(new object[] {
             "reere",
             "gege"});
-            this.comboBox1.Location = new System.Drawing.Point(405, 336);
+            this.comboBox1.Location = new System.Drawing.Point(540, 414);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 13;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(275, 172);
+            this.richTextBox1.Location = new System.Drawing.Point(367, 212);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(251, 149);
+            this.richTextBox1.Size = new System.Drawing.Size(333, 182);
             this.richTextBox1.TabIndex = 12;
             this.richTextBox1.Text = "";
             // 
             // FavoriteButton
             // 
-            this.FavoriteButton.Location = new System.Drawing.Point(275, 336);
+            this.FavoriteButton.Location = new System.Drawing.Point(367, 414);
+            this.FavoriteButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FavoriteButton.Name = "FavoriteButton";
-            this.FavoriteButton.Size = new System.Drawing.Size(75, 23);
+            this.FavoriteButton.Size = new System.Drawing.Size(100, 28);
             this.FavoriteButton.TabIndex = 11;
             this.FavoriteButton.Text = "Favorite";
             this.FavoriteButton.UseVisualStyleBackColor = true;
@@ -79,9 +82,10 @@
             // 
             // ExportButton
             // 
-            this.ExportButton.Location = new System.Drawing.Point(451, 133);
+            this.ExportButton.Location = new System.Drawing.Point(601, 164);
+            this.ExportButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ExportButton.Name = "ExportButton";
-            this.ExportButton.Size = new System.Drawing.Size(75, 23);
+            this.ExportButton.Size = new System.Drawing.Size(100, 28);
             this.ExportButton.TabIndex = 10;
             this.ExportButton.Text = "Export";
             this.ExportButton.UseVisualStyleBackColor = true;
@@ -89,9 +93,10 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(275, 134);
+            this.SaveButton.Location = new System.Drawing.Point(367, 165);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveButton.Size = new System.Drawing.Size(100, 28);
             this.SaveButton.TabIndex = 9;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -99,9 +104,10 @@
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(451, 91);
+            this.SearchButton.Location = new System.Drawing.Point(601, 112);
+            this.SearchButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(75, 23);
+            this.SearchButton.Size = new System.Drawing.Size(100, 28);
             this.SearchButton.TabIndex = 8;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
@@ -109,9 +115,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(275, 91);
+            this.textBox1.Location = new System.Drawing.Point(367, 112);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(132, 22);
             this.textBox1.TabIndex = 7;
             // 
             // cyclopediaBaseDataSet
@@ -144,9 +151,9 @@
             // 
             // Search
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.FavoriteButton);
@@ -154,6 +161,7 @@
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.textBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Search";
             this.Text = "Search";
             this.Load += new System.EventHandler(this.Search_Load_1);
