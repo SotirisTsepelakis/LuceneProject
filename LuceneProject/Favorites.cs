@@ -19,7 +19,7 @@ namespace LuceneProject
 
         private void ShowFavs_Click(object sender, EventArgs e)
         {
-            FavoriteGridView.DataSource = favoritesTableAdapter1.GetDataByFav();
+          //  FavoriteGridView.DataSource = favoritesTableAdapter1.GetDataByFav();
             FavoriteGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
     }

@@ -21,6 +21,8 @@ namespace LuceneProject
         LemmaCategoryTableAdapter lemmaCategoryTableAdapter = new LemmaCategoryTableAdapter();
         FavotiteTableAdapter favotiteTableAdapter = new FavotiteTableAdapter();
         LemmaMediaTableAdapter lemmaMediaTableAdapter = new LemmaMediaTableAdapter();
+        LemmaTableAdapter lemmaTableAdapter = new LemmaTableAdapter();
+        MediaTableAdapter mediaTableAdapter = new MediaTableAdapter();
 
         public MainForm()
         {
@@ -89,7 +91,11 @@ namespace LuceneProject
             string category = comboBox1.Text;
             string content = richTextBox2.Text;
 
-            lemmaMediaTableAdapter.Insert(mediaID, title);
+
+            lemmaTableAdapter.Insert(title);
+            lemmaCategoryTableAdapter.Insert(category, title);
+            mediaTableAdapter.Insert("doc", content);
+           // lemmaMediaTableAdapter.Insert(mediaID, title);
         }
 
         private void FavoriteButton_Click(object sender, EventArgs e)
@@ -109,7 +115,7 @@ namespace LuceneProject
 
             }
 
-            favotiteTableAdapter.Insert(title, username);
+           // favotiteTableAdapter.Insert(title, username);
         }
 
         private void ExportButton_Click(object sender, EventArgs e)
