@@ -41,6 +41,8 @@ namespace LuceneProject
             }
             else
                 MessageBox.Show("Invalid Login please check username and password");
+
+            con.Close();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
