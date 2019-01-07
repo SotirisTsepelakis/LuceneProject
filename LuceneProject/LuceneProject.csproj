@@ -106,6 +106,7 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Searcher.cs" />
     <EmbeddedResource Include="Favorites.resx">
       <DependentUpon>Favorites.cs</DependentUpon>
     </EmbeddedResource>
