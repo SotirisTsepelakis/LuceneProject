@@ -14,7 +14,7 @@ namespace LuceneProject
     {
         private IndexWriter writer;
         public String IndexDirectory = "Index";
-        public String DataDirectory { get; set; }
+        public String DataDirectory = "Data";
 
         public Indexer()
         {
@@ -41,6 +41,8 @@ namespace LuceneProject
             writer.Dispose();
         }
 
+        //Retrieves the list of file names in the “data” folder(line 31) and creates the index of the documents
+        //will be called from the main form
         public int Index()
         {
             String[] files = System.IO.Directory.GetFileSystemEntries(DataDirectory);
@@ -55,6 +57,7 @@ namespace LuceneProject
             return writer.NumDocs();
         }
 
+        //Creates document from GetDocument() function and calls AddDocument method of IndexWriter.
         private void IndexFile(DataRow name)
         {
             Document doc = GetDocument(name);
