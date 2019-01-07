@@ -12,10 +12,16 @@ using System.Xml;
 using System.Web;
 using System.IO;
 using System.Text.RegularExpressions;
+using LuceneProject.DatabaseDataSetTableAdapters;
+
 namespace LuceneProject
 {
     public partial class MainForm : Form
     {
+        LemmaCategoryTableAdapter lemmaCategoryTableAdapter = new LemmaCategoryTableAdapter();
+        FavotiteTableAdapter favotiteTableAdapter = new FavotiteTableAdapter();
+        LemmaMediaTableAdapter lemmaMediaTableAdapter = new LemmaMediaTableAdapter();
+
         public MainForm()
         {
             InitializeComponent();
@@ -83,8 +89,7 @@ namespace LuceneProject
             string category = comboBox1.Text;
             string content = richTextBox2.Text;
 
-            articlesTableAdapter.InsertQuery(content, title, category);
-            this.articlesTableAdapter.Fill(this.cyclopediaBaseDataSet.Articles);
+            lemmaMediaTableAdapter.Insert(mediaID, title);
         }
 
         private void FavoriteButton_Click(object sender, EventArgs e)
@@ -104,8 +109,7 @@ namespace LuceneProject
 
             }
 
-            favoritesTableAdapter.InsertQuery(1, title, content);
-            this.favoritesTableAdapter.Fill(this.cyclopediaBaseDataSet.Favorites);
+            favotiteTableAdapter.Insert(title, username);
         }
 
         private void ExportButton_Click(object sender, EventArgs e)
@@ -123,8 +127,19 @@ namespace LuceneProject
         private void button3_Click(object sender, EventArgs e)
         {
             string category = textBox2.Text;
-            dataGridView1.DataSource = articlesTableAdapter.GetDataByCategory(category);
+            dataGridView1.DataSource = lemmaCategoryTableAdapter.GetDataByCategory(category);
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+        }
+
+        private void toolStripSignInButton_Click(object sender, EventArgs e)
+        {
+            LoginForm form = new LoginForm();
+            form.ShowDialog();
+        }
+
+        private void toolStripRegisterButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

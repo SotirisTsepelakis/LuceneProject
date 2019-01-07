@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.basicMenuStrip = new System.Windows.Forms.MenuStrip();
             this.toolStripDropDownLanguageButton = new System.Windows.Forms.ToolStripDropDownButton();
@@ -57,12 +56,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.cyclopediaBaseDataSet = new LuceneProject.CyclopediaBaseDataSet();
-            this.cyclopediaBaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.articlesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.articlesTableAdapter = new LuceneProject.CyclopediaBaseDataSetTableAdapters.ArticlesTableAdapter();
-            this.favoritesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.favoritesTableAdapter = new LuceneProject.CyclopediaBaseDataSetTableAdapters.FavoritesTableAdapter();
             this.basicMenuStrip.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -70,10 +63,6 @@
             this.BaseSearch.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cyclopediaBaseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cyclopediaBaseDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.articlesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.favoritesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // basicMenuStrip
@@ -89,8 +78,8 @@
             this.toolStripLogoLabel});
             this.basicMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.basicMenuStrip.Name = "basicMenuStrip";
-            this.basicMenuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.basicMenuStrip.Size = new System.Drawing.Size(720, 32);
+            this.basicMenuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.basicMenuStrip.Size = new System.Drawing.Size(960, 39);
             this.basicMenuStrip.TabIndex = 3;
             // 
             // toolStripDropDownLanguageButton
@@ -125,14 +114,15 @@
             this.toolStripRegisterButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripRegisterButton.Image")));
             this.toolStripRegisterButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripRegisterButton.Name = "toolStripRegisterButton";
-            this.toolStripRegisterButton.Size = new System.Drawing.Size(93, 25);
+            this.toolStripRegisterButton.Size = new System.Drawing.Size(114, 32);
             this.toolStripRegisterButton.Text = "Create Account";
+            this.toolStripRegisterButton.Click += new System.EventHandler(this.toolStripRegisterButton_Click);
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(18, 25);
+            this.toolStripLabel2.Size = new System.Drawing.Size(23, 32);
             this.toolStripLabel2.Text = "or";
             // 
             // toolStripSignInButton
@@ -143,8 +133,9 @@
             this.toolStripSignInButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSignInButton.Image")));
             this.toolStripSignInButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSignInButton.Name = "toolStripSignInButton";
-            this.toolStripSignInButton.Size = new System.Drawing.Size(47, 25);
+            this.toolStripSignInButton.Size = new System.Drawing.Size(58, 32);
             this.toolStripSignInButton.Text = "Sign In";
+            this.toolStripSignInButton.Click += new System.EventHandler(this.toolStripSignInButton_Click);
             // 
             // toolStripLogoLabel
             // 
@@ -164,11 +155,11 @@
             this.tabPage2.Controls.Add(this.SearchButton);
             this.tabPage2.Controls.Add(this.textBox1);
             this.tabPage2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(712, 354);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Size = new System.Drawing.Size(952, 439);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Search";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -205,24 +196,27 @@
             "Technology",
             "Universe",
             "World"});
-            this.comboBox1.Location = new System.Drawing.Point(250, 308);
+            this.comboBox1.Location = new System.Drawing.Point(333, 379);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 20;
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(76, 135);
+            this.richTextBox2.Location = new System.Drawing.Point(101, 166);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(323, 149);
+            this.richTextBox2.Size = new System.Drawing.Size(429, 182);
             this.richTextBox2.TabIndex = 19;
             this.richTextBox2.Text = "";
             // 
             // FavoriteButton
             // 
-            this.FavoriteButton.Location = new System.Drawing.Point(76, 308);
+            this.FavoriteButton.Location = new System.Drawing.Point(101, 379);
+            this.FavoriteButton.Margin = new System.Windows.Forms.Padding(4);
             this.FavoriteButton.Name = "FavoriteButton";
-            this.FavoriteButton.Size = new System.Drawing.Size(75, 23);
+            this.FavoriteButton.Size = new System.Drawing.Size(100, 28);
             this.FavoriteButton.TabIndex = 18;
             this.FavoriteButton.Text = "Favorite";
             this.FavoriteButton.UseVisualStyleBackColor = true;
@@ -230,9 +224,10 @@
             // 
             // ExportButton
             // 
-            this.ExportButton.Location = new System.Drawing.Point(170, 86);
+            this.ExportButton.Location = new System.Drawing.Point(227, 106);
+            this.ExportButton.Margin = new System.Windows.Forms.Padding(4);
             this.ExportButton.Name = "ExportButton";
-            this.ExportButton.Size = new System.Drawing.Size(75, 23);
+            this.ExportButton.Size = new System.Drawing.Size(100, 28);
             this.ExportButton.TabIndex = 17;
             this.ExportButton.Text = "Export";
             this.ExportButton.UseVisualStyleBackColor = true;
@@ -240,9 +235,10 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(76, 86);
+            this.SaveButton.Location = new System.Drawing.Point(101, 106);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(4);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveButton.Size = new System.Drawing.Size(100, 28);
             this.SaveButton.TabIndex = 16;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -250,9 +246,10 @@
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(323, 39);
+            this.SearchButton.Location = new System.Drawing.Point(431, 48);
+            this.SearchButton.Margin = new System.Windows.Forms.Padding(4);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(75, 23);
+            this.SearchButton.Size = new System.Drawing.Size(100, 28);
             this.SearchButton.TabIndex = 15;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
@@ -260,19 +257,20 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(76, 41);
+            this.textBox1.Location = new System.Drawing.Point(101, 50);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 20);
+            this.textBox1.Size = new System.Drawing.Size(225, 22);
             this.textBox1.TabIndex = 14;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.articleTableLayoutPanel);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(712, 354);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Size = new System.Drawing.Size(952, 439);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main Page";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -286,13 +284,13 @@
             this.articleTableLayoutPanel.Controls.Add(this.label2, 1, 0);
             this.articleTableLayoutPanel.Controls.Add(this.richTextBox1, 0, 1);
             this.articleTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.articleTableLayoutPanel.Location = new System.Drawing.Point(2, 2);
-            this.articleTableLayoutPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.articleTableLayoutPanel.Location = new System.Drawing.Point(3, 2);
+            this.articleTableLayoutPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.articleTableLayoutPanel.Name = "articleTableLayoutPanel";
             this.articleTableLayoutPanel.RowCount = 2;
             this.articleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.996915F));
             this.articleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 94.00308F));
-            this.articleTableLayoutPanel.Size = new System.Drawing.Size(708, 350);
+            this.articleTableLayoutPanel.Size = new System.Drawing.Size(946, 435);
             this.articleTableLayoutPanel.TabIndex = 0;
             this.articleTableLayoutPanel.CellPaint += new System.Windows.Forms.TableLayoutCellPaintEventHandler(this.articleTableLayoutPanel_CellPaint);
             // 
@@ -301,10 +299,10 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label1.Location = new System.Drawing.Point(2, 2);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 0);
+            this.label1.Location = new System.Drawing.Point(3, 2);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(350, 18);
+            this.label1.Size = new System.Drawing.Size(467, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Today\'s Suggested Article";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -314,10 +312,10 @@
             this.label2.BackColor = System.Drawing.Color.PeachPuff;
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label2.Location = new System.Drawing.Point(356, 2);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 0);
+            this.label2.Location = new System.Drawing.Point(476, 2);
+            this.label2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(350, 18);
+            this.label2.Size = new System.Drawing.Size(467, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "On this day";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -325,10 +323,10 @@
             // richTextBox1
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(2, 22);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.richTextBox1.Location = new System.Drawing.Point(3, 28);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(350, 326);
+            this.richTextBox1.Size = new System.Drawing.Size(467, 405);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             // 
@@ -338,11 +336,11 @@
             this.BaseSearch.Controls.Add(this.tabPage2);
             this.BaseSearch.Controls.Add(this.tabPage3);
             this.BaseSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BaseSearch.Location = new System.Drawing.Point(0, 32);
-            this.BaseSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.BaseSearch.Location = new System.Drawing.Point(0, 39);
+            this.BaseSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BaseSearch.Name = "BaseSearch";
             this.BaseSearch.SelectedIndex = 0;
-            this.BaseSearch.Size = new System.Drawing.Size(720, 380);
+            this.BaseSearch.Size = new System.Drawing.Size(960, 468);
             this.BaseSearch.TabIndex = 4;
             // 
             // tabPage3
@@ -352,10 +350,11 @@
             this.tabPage3.Controls.Add(this.button2);
             this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.textBox2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(712, 354);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage3.Size = new System.Drawing.Size(952, 439);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "BaseSearch";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -363,17 +362,18 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(187, 169);
+            this.dataGridView1.Location = new System.Drawing.Point(249, 208);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(320, 185);
             this.dataGridView1.TabIndex = 9;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(415, 76);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Location = new System.Drawing.Point(553, 94);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(109, 26);
+            this.button3.Size = new System.Drawing.Size(145, 32);
             this.button3.TabIndex = 8;
             this.button3.Text = "Search by category";
             this.button3.UseVisualStyleBackColor = true;
@@ -381,68 +381,40 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(289, 76);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Location = new System.Drawing.Point(385, 94);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 26);
+            this.button2.Size = new System.Drawing.Size(143, 32);
             this.button2.TabIndex = 7;
             this.button2.Text = "Search by keyword";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(187, 76);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(249, 94);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 36);
+            this.button1.Size = new System.Drawing.Size(108, 44);
             this.button1.TabIndex = 6;
             this.button1.Text = "Search by title";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(187, 36);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Location = new System.Drawing.Point(249, 44);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(338, 20);
+            this.textBox2.Size = new System.Drawing.Size(449, 22);
             this.textBox2.TabIndex = 5;
-            // 
-            // cyclopediaBaseDataSet
-            // 
-            this.cyclopediaBaseDataSet.DataSetName = "CyclopediaBaseDataSet";
-            this.cyclopediaBaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cyclopediaBaseDataSetBindingSource
-            // 
-            this.cyclopediaBaseDataSetBindingSource.DataSource = this.cyclopediaBaseDataSet;
-            this.cyclopediaBaseDataSetBindingSource.Position = 0;
-            // 
-            // articlesBindingSource
-            // 
-            this.articlesBindingSource.DataMember = "Articles";
-            this.articlesBindingSource.DataSource = this.cyclopediaBaseDataSet;
-            // 
-            // articlesTableAdapter
-            // 
-            this.articlesTableAdapter.ClearBeforeFill = true;
-            // 
-            // favoritesBindingSource
-            // 
-            this.favoritesBindingSource.DataMember = "Favorites";
-            this.favoritesBindingSource.DataSource = this.cyclopediaBaseDataSet;
-            // 
-            // favoritesTableAdapter
-            // 
-            this.favoritesTableAdapter.ClearBeforeFill = true;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 412);
+            this.ClientSize = new System.Drawing.Size(960, 507);
             this.Controls.Add(this.BaseSearch);
             this.Controls.Add(this.basicMenuStrip);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.Text = "Cyclopedia";
             this.basicMenuStrip.ResumeLayout(false);
@@ -455,10 +427,6 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cyclopediaBaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cyclopediaBaseDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.articlesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.favoritesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -486,12 +454,6 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.TextBox textBox1;
-        private CyclopediaBaseDataSet cyclopediaBaseDataSet;
-        private System.Windows.Forms.BindingSource cyclopediaBaseDataSetBindingSource;
-        private System.Windows.Forms.BindingSource articlesBindingSource;
-        private CyclopediaBaseDataSetTableAdapters.ArticlesTableAdapter articlesTableAdapter;
-        private System.Windows.Forms.BindingSource favoritesBindingSource;
-        private CyclopediaBaseDataSetTableAdapters.FavoritesTableAdapter favoritesTableAdapter;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button3;

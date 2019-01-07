@@ -1,22 +1,24 @@
-﻿using System;
-using Lucene.Net.Analysis.Standard;
+﻿using Lucene.Net.Analysis.Standard;
 using Lucene.Net.Index;
 using Lucene.Net.Store;
-using LVersion = Lucene.Net.Util.Version;
+using System;
+using LuceneProject.DatabaseDataSetTableAdapters;
+using System.Data;
 using Lucene.Net.Documents;
-using System.Windows.Forms;
+using LVersion = Lucene.Net.Util.Version;
+
 
 namespace LuceneProject
 {
     public class Indexer : IDisposable
     {
         private IndexWriter writer;
-        public String IndexDirectory = "C:\\Users\\sotiris\\source\\repos\\LuceneTest\\LuceneTest\\bin\\Debug\\Index";
+        public String IndexDirectory = "Index";
         public String DataDirectory { get; set; }
 
-        public Indexer() {
+        public Indexer()
+        {
             Setup();
-            Index();
         }
 
         public void Setup()
@@ -31,7 +33,7 @@ namespace LuceneProject
             {
                 Console.WriteLine(exc.Message);
             }
-            
+
         }
 
         public void Dispose()
@@ -42,29 +44,32 @@ namespace LuceneProject
         public int Index()
         {
             String[] files = System.IO.Directory.GetFileSystemEntries(DataDirectory);
+            LemmaMediaTableAdapter lemmaMediaTableAdapter = new LemmaMediaTableAdapter();
+            DataTable dataTable = lemmaMediaTableAdapter.GetAllDataFromLemmaAndMedia();
 
-            foreach(String name in files)
+            foreach (DataRow name in dataTable.Rows)
             {
                 IndexFile(name);
             }
 
-            return writer.NumDocks();
+            return writer.NumDocs();
         }
 
-        private void IndexFile(string name)
+        private void IndexFile(DataRow name)
         {
             Document doc = GetDocument(name);
             writer.AddDocument(doc);
         }
 
-        //Gcreates a Document instance and adds Field instances to the document
-        private Document GetDocument(string name)
+        //Creates a Document instance and adds Field instances to the document
+        private Document GetDocument(DataRow name)
         {
             Document doc = new Document();
 
-            System.IO.StreamReader reader = new System.IO.StreamReader(name, System.Text.Encoding.Default);
-            string text = reader.ReadToEnd();
-
+            doc.Add(new Field("title", name["LemmaTitle"].ToString(), Field.Store.YES, Field.Index.ANALYZED));
+            doc.Add(new Field("Content", name["content"].ToString(), Field.Store.YES, Field.Index.ANALYZED));
+            doc.Add(new Field("MID", name["MediaID"].ToString(), Field.Store.YES, Field.Index.NO));
+            doc.Add(new Field("dataType", name["type"].ToString(), Field.Store.YES, Field.Index.ANALYZED));
 
             return doc;
         }

@@ -30,7 +30,6 @@
         {
             this.FavoriteGridView = new System.Windows.Forms.DataGridView();
             this.ShowFavs = new System.Windows.Forms.Button();
-            this.favoritesTableAdapter1 = new LuceneProject.CyclopediaBaseDataSetTableAdapters.FavoritesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.FavoriteGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,10 +51,6 @@
             this.ShowFavs.UseVisualStyleBackColor = true;
             this.ShowFavs.Click += new System.EventHandler(this.ShowFavs_Click);
             // 
-            // favoritesTableAdapter1
-            // 
-            this.favoritesTableAdapter1.ClearBeforeFill = true;
-            // 
             // Favorites
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -74,6 +69,5 @@
 
         private System.Windows.Forms.DataGridView FavoriteGridView;
         private System.Windows.Forms.Button ShowFavs;
-        private CyclopediaBaseDataSetTableAdapters.FavoritesTableAdapter favoritesTableAdapter1;
     }
 }

@@ -44,12 +44,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.cyclopediaBaseDataSet = new LuceneProject.CyclopediaBaseDataSet();
-            this.cyclopediaBaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.articlesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.articlesTableAdapter = new LuceneProject.CyclopediaBaseDataSetTableAdapters.ArticlesTableAdapter();
-            this.favoritesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.favoritesTableAdapter = new LuceneProject.CyclopediaBaseDataSetTableAdapters.FavoritesTableAdapter();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.FavoriteButton = new System.Windows.Forms.Button();
@@ -57,12 +51,14 @@
             this.SaveButton = new System.Windows.Forms.Button();
             this.SearchButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cyclopediaBaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.articlesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.favoritesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.basicMenuStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.articleTableLayoutPanel.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cyclopediaBaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyclopediaBaseDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articlesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.favoritesBindingSource)).BeginInit();
@@ -102,7 +98,7 @@
             // 
             this.englishToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("englishToolStripMenuItem.Image")));
             this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            this.englishToolStripMenuItem.Size = new System.Drawing.Size(246, 42);
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(131, 26);
             this.englishToolStripMenuItem.Text = "English";
             this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
             // 
@@ -236,34 +232,6 @@
             this.tabPage2.Text = "Αναζήτηση";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // cyclopediaBaseDataSet
-            // 
-            this.cyclopediaBaseDataSet.DataSetName = "CyclopediaBaseDataSet";
-            this.cyclopediaBaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cyclopediaBaseDataSetBindingSource
-            // 
-            this.cyclopediaBaseDataSetBindingSource.DataSource = this.cyclopediaBaseDataSet;
-            this.cyclopediaBaseDataSetBindingSource.Position = 0;
-            // 
-            // articlesBindingSource
-            // 
-            this.articlesBindingSource.DataMember = "Articles";
-            this.articlesBindingSource.DataSource = this.cyclopediaBaseDataSet;
-            // 
-            // articlesTableAdapter
-            // 
-            this.articlesTableAdapter.ClearBeforeFill = true;
-            // 
-            // favoritesBindingSource
-            // 
-            this.favoritesBindingSource.DataMember = "Favorites";
-            this.favoritesBindingSource.DataSource = this.cyclopediaBaseDataSet;
-            // 
-            // favoritesTableAdapter
-            // 
-            this.favoritesTableAdapter.ClearBeforeFill = true;
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -333,6 +301,14 @@
             this.textBox1.Size = new System.Drawing.Size(225, 22);
             this.textBox1.TabIndex = 21;
             // 
+            // cyclopediaBaseDataSetBindingSource
+            //
+            this.cyclopediaBaseDataSetBindingSource.Position = 0;
+            // 
+            // articlesBindingSource
+            // 
+            this.articlesBindingSource.DataMember = "Articles";
+            //
             // FormInGreek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -341,7 +317,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.basicMenuStrip);
             this.Name = "FormInGreek";
-            this.Text = "Form2";
+            this.Text = "Cyclopedia";
             this.basicMenuStrip.ResumeLayout(false);
             this.basicMenuStrip.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -349,7 +325,6 @@
             this.articleTableLayoutPanel.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cyclopediaBaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyclopediaBaseDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.articlesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.favoritesBindingSource)).EndInit();
@@ -373,12 +348,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.TabPage tabPage2;
-        private CyclopediaBaseDataSet cyclopediaBaseDataSet;
         private System.Windows.Forms.BindingSource cyclopediaBaseDataSetBindingSource;
         private System.Windows.Forms.BindingSource articlesBindingSource;
-        private CyclopediaBaseDataSetTableAdapters.ArticlesTableAdapter articlesTableAdapter;
         private System.Windows.Forms.BindingSource favoritesBindingSource;
-        private CyclopediaBaseDataSetTableAdapters.FavoritesTableAdapter favoritesTableAdapter;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.Button FavoriteButton;

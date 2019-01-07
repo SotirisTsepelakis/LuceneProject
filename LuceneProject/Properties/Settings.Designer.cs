@@ -26,11 +26,11 @@ namespace LuceneProject.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\\Users\\Stratos\\Desktop\\CyclopediaB" +
-            "ase.mdb")]
-        public string CyclopediaBaseConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\\Users\\Sotiris\\Desktop\\LuceneProje" +
+            "ct\\Database.mdb")]
+        public string CyclopediaBaseConnectionString1 {
             get {
-                return ((string)(this["CyclopediaBaseConnectionString"]));
+                return ((string)(this["CyclopediaBaseConnectionString1"]));
             }
         }
     }
