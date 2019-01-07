@@ -139,7 +139,8 @@ namespace LuceneProject
 
         private void toolStripRegisterButton_Click(object sender, EventArgs e)
         {
-
+            RegisterForm form = new RegisterForm();
+            form.ShowDialog();
         }
     }
 }
