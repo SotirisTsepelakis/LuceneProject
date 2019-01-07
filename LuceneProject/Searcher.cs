@@ -9,21 +9,49 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Lucene.Net.Index;
 
 namespace LuceneProject
 {
     public class Searcher
     {
-        public void Search(string indexDir, string query)
+        public void Search(string query)
         {
+            string indexDir = "Index";
+
             using (Directory dir = FSDirectory.Open(indexDir))
             using (IndexSearcher searcher = new IndexSearcher(dir))
             {
-                QueryParser parser = new QueryParser(LVersion.LUCENE_30, "content", new StandardAnalyzer(LVersion.LUCENE_30));
-                Query q = parser.Parse(query);
-                TopDocs hits = searcher.Search(q, 10);
+                string query2="";
+                char[] chars = query.ToCharArray();
 
-                Console.WriteLine("Found " + hits.TotalHits + " documents matched query '" + query + "':");
+                string[] splitted;
+                Term term;
+                WildcardQuery wc_q;
+                BooleanQuery bool_q = new BooleanQuery();
+
+                //check if more than 1 keywords are inserted
+                if (query2.Split(' ').Length>1)
+                {
+                    splitted = query2.Split(' ');
+
+                    for (int z=0;z<splitted.Length;z++)
+                    {
+                        term = new Term("Content", "*" + splitted[z] + "*");
+                        wc_q = new WildcardQuery(term);
+                        bool_q.Add(wc_q, Occur.SHOULD);
+                    }
+                }
+                else
+                {
+                    term = new Term("Content", "*" + query2 + "*");
+                    wc_q = new WildcardQuery(term);
+                    bool_q.Add(wc_q, Occur.MUST);
+                }
+
+                TopDocs hits = searcher.Search(bool_q, 10);
+
+                Console.WriteLine("Found " + hits.TotalHits + " documents matched query '" + bool_q + "':");
 
                 foreach (ScoreDoc d in hits.ScoreDocs)
                 {
