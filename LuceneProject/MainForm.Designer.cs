@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Religion");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Sports");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("World");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Religion");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Sports");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("World");
             this.basicMenuStrip = new System.Windows.Forms.MenuStrip();
             this.toolStripDropDownLanguageButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.greekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,6 +40,7 @@
             this.toolStripSignInButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripLogoLabel = new System.Windows.Forms.ToolStripLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.showFavoritesButton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.FavoriteButton = new System.Windows.Forms.Button();
@@ -60,7 +61,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.showFavoritesButton = new System.Windows.Forms.Button();
             this.basicMenuStrip.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -169,6 +169,16 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Search";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // showFavoritesButton
+            // 
+            this.showFavoritesButton.Location = new System.Drawing.Point(425, 379);
+            this.showFavoritesButton.Name = "showFavoritesButton";
+            this.showFavoritesButton.Size = new System.Drawing.Size(105, 28);
+            this.showFavoritesButton.TabIndex = 21;
+            this.showFavoritesButton.Text = "My Favorites";
+            this.showFavoritesButton.UseVisualStyleBackColor = true;
+            this.showFavoritesButton.Visible = false;
             // 
             // comboBox1
             // 
@@ -372,16 +382,16 @@
             this.treeView1.Location = new System.Drawing.Point(0, 44);
             this.treeView1.Margin = new System.Windows.Forms.Padding(4);
             this.treeView1.Name = "treeView1";
-            treeNode19.Name = "Religion";
-            treeNode19.Text = "Religion";
-            treeNode20.Name = "Sports";
-            treeNode20.Text = "Sports";
-            treeNode21.Name = "World";
-            treeNode21.Text = "World";
+            treeNode1.Name = "Religion";
+            treeNode1.Text = "Religion";
+            treeNode2.Name = "Sports";
+            treeNode2.Text = "Sports";
+            treeNode3.Name = "World";
+            treeNode3.Text = "World";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode19,
-            treeNode20,
-            treeNode21});
+            treeNode1,
+            treeNode2,
+            treeNode3});
             this.treeView1.Size = new System.Drawing.Size(160, 118);
             this.treeView1.TabIndex = 10;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -434,16 +444,6 @@
             this.textBox2.Size = new System.Drawing.Size(449, 22);
             this.textBox2.TabIndex = 5;
             // 
-            // showFavoritesButton
-            // 
-            this.showFavoritesButton.Location = new System.Drawing.Point(425, 379);
-            this.showFavoritesButton.Name = "showFavoritesButton";
-            this.showFavoritesButton.Size = new System.Drawing.Size(105, 28);
-            this.showFavoritesButton.TabIndex = 21;
-            this.showFavoritesButton.Text = "My Favorites";
-            this.showFavoritesButton.UseVisualStyleBackColor = true;
-            this.showFavoritesButton.Visible = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -455,6 +455,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cyclopedia";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.basicMenuStrip.ResumeLayout(false);
             this.basicMenuStrip.PerformLayout();
             this.tabPage2.ResumeLayout(false);

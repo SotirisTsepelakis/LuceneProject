@@ -13,6 +13,7 @@ using System.Web;
 using System.IO;
 using System.Text.RegularExpressions;
 using LuceneProject.DatabaseDataSetTableAdapters;
+using System.Data.OleDb;
 
 namespace LuceneProject
 {
@@ -24,6 +25,8 @@ namespace LuceneProject
         LemmaTableAdapter lemmaTableAdapter = new LemmaTableAdapter();
         MediaTableAdapter mediaTableAdapter = new MediaTableAdapter();
         private string uname;
+        public static string staticUname;
+        private int lowerBound=7, upperBound;
 
         public MainForm()
         {
@@ -104,8 +107,8 @@ namespace LuceneProject
             lemmaTableAdapter.Insert(title);
             lemmaCategoryTableAdapter.Insert(category, title);
             mediaTableAdapter.Insert("doc", content);
-            
-           lemmaMediaTableAdapter.Insert(1, title);
+
+            lemmaMediaTableAdapter.Insert(1, title);
             
         }
 
@@ -161,6 +164,7 @@ namespace LuceneProject
                 toolStripLabel2.Font= new Font("Arial", 8, FontStyle.Bold);
 
                 setUsername(form.getUsernameToStore());
+                staticUname = form.getUsernameToStore();
 
                 FavoriteButton.Visible = true;
                 showFavoritesButton.Visible = true;
@@ -183,6 +187,50 @@ namespace LuceneProject
             string category = e.Node.Text;
             dataGridView1.DataSource = lemmaCategoryTableAdapter.GetDataByCategory(category);
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            OleDbConnection con = new OleDbConnection
+            {
+                ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString1
+            };
+            con.Open();
+            OleDbCommand cmd = new OleDbCommand("SELECT COUNT(*) FROM Lemma", con);
+
+            try
+            {
+                upperBound = (int)cmd.ExecuteScalar();
+            }
+            catch (OleDbException exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            Random r = new Random();
+            int rInt = r.Next(lowerBound, upperBound+1);
+            Console.Write(rInt);
+
+            con.Open();
+            OleDbCommand cmd2 = new OleDbCommand("SELECT content FROM Media WHERE ID='" + rInt + "'", con);
+
+            try
+            {
+                string content = (string)cmd2.ExecuteScalar();
+                richTextBox1.Text = content;
+            }
+            catch (OleDbException exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+            finally
+            {
+                con.Close();
+            }        
         }
     }
 }
