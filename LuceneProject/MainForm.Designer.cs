@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Religion");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Sports");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("World");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Religion");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Sports");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("World");
             this.basicMenuStrip = new System.Windows.Forms.MenuStrip();
             this.toolStripDropDownLanguageButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.greekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,6 +60,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.showFavoritesButton = new System.Windows.Forms.Button();
             this.basicMenuStrip.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -151,6 +152,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.showFavoritesButton);
             this.tabPage2.Controls.Add(this.comboBox1);
             this.tabPage2.Controls.Add(this.richTextBox2);
             this.tabPage2.Controls.Add(this.FavoriteButton);
@@ -158,7 +160,7 @@
             this.tabPage2.Controls.Add(this.SaveButton);
             this.tabPage2.Controls.Add(this.SearchButton);
             this.tabPage2.Controls.Add(this.textBox1);
-            this.tabPage2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tabPage2.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
@@ -200,8 +202,8 @@
             "Technology",
             "Universe",
             "World"});
-            this.comboBox1.Location = new System.Drawing.Point(369, 379);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Location = new System.Drawing.Point(227, 382);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 20;
@@ -209,7 +211,7 @@
             // richTextBox2
             // 
             this.richTextBox2.Location = new System.Drawing.Point(101, 166);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(429, 182);
             this.richTextBox2.TabIndex = 19;
@@ -218,18 +220,19 @@
             // FavoriteButton
             // 
             this.FavoriteButton.Location = new System.Drawing.Point(101, 379);
-            this.FavoriteButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FavoriteButton.Margin = new System.Windows.Forms.Padding(4);
             this.FavoriteButton.Name = "FavoriteButton";
             this.FavoriteButton.Size = new System.Drawing.Size(100, 28);
             this.FavoriteButton.TabIndex = 18;
             this.FavoriteButton.Text = "Favorite";
             this.FavoriteButton.UseVisualStyleBackColor = true;
+            this.FavoriteButton.Visible = false;
             this.FavoriteButton.Click += new System.EventHandler(this.FavoriteButton_Click);
             // 
             // ExportButton
             // 
             this.ExportButton.Location = new System.Drawing.Point(227, 106);
-            this.ExportButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ExportButton.Margin = new System.Windows.Forms.Padding(4);
             this.ExportButton.Name = "ExportButton";
             this.ExportButton.Size = new System.Drawing.Size(100, 28);
             this.ExportButton.TabIndex = 17;
@@ -240,7 +243,7 @@
             // SaveButton
             // 
             this.SaveButton.Location = new System.Drawing.Point(101, 106);
-            this.SaveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(4);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(100, 28);
             this.SaveButton.TabIndex = 16;
@@ -251,7 +254,7 @@
             // SearchButton
             // 
             this.SearchButton.Location = new System.Drawing.Point(431, 48);
-            this.SearchButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SearchButton.Margin = new System.Windows.Forms.Padding(4);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(100, 28);
             this.SearchButton.TabIndex = 15;
@@ -262,7 +265,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(101, 50);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(225, 22);
             this.textBox1.TabIndex = 14;
@@ -356,9 +359,9 @@
             this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.textBox2);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage3.Size = new System.Drawing.Size(952, 439);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "BaseSearch";
@@ -367,18 +370,18 @@
             // treeView1
             // 
             this.treeView1.Location = new System.Drawing.Point(0, 44);
-            this.treeView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.treeView1.Margin = new System.Windows.Forms.Padding(4);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Religion";
-            treeNode1.Text = "Religion";
-            treeNode2.Name = "Sports";
-            treeNode2.Text = "Sports";
-            treeNode3.Name = "World";
-            treeNode3.Text = "World";
+            treeNode19.Name = "Religion";
+            treeNode19.Text = "Religion";
+            treeNode20.Name = "Sports";
+            treeNode20.Text = "Sports";
+            treeNode21.Name = "World";
+            treeNode21.Text = "World";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3});
+            treeNode19,
+            treeNode20,
+            treeNode21});
             this.treeView1.Size = new System.Drawing.Size(160, 118);
             this.treeView1.TabIndex = 10;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -387,7 +390,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(249, 208);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(320, 185);
             this.dataGridView1.TabIndex = 9;
@@ -430,6 +433,16 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(449, 22);
             this.textBox2.TabIndex = 5;
+            // 
+            // showFavoritesButton
+            // 
+            this.showFavoritesButton.Location = new System.Drawing.Point(425, 379);
+            this.showFavoritesButton.Name = "showFavoritesButton";
+            this.showFavoritesButton.Size = new System.Drawing.Size(105, 28);
+            this.showFavoritesButton.TabIndex = 21;
+            this.showFavoritesButton.Text = "My Favorites";
+            this.showFavoritesButton.UseVisualStyleBackColor = true;
+            this.showFavoritesButton.Visible = false;
             // 
             // MainForm
             // 
@@ -486,5 +499,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.Button showFavoritesButton;
     }
 }

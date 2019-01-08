@@ -28,14 +28,14 @@ namespace LuceneProject
         public MainForm()
         {
             InitializeComponent();
-            using (Indexer indexer = new Indexer())
+            /*using (Indexer indexer = new Indexer())
             {
                 indexer.IndexDirectory = "Index";
                 indexer.DataDirectory = "Data";
                 indexer.Setup();
 
                 indexer.Index();
-            }
+            }*/
         }
 
         private void greekToolStripMenuItem_Click(object sender, EventArgs e)
@@ -161,6 +161,9 @@ namespace LuceneProject
                 toolStripLabel2.Font= new Font("Arial", 8, FontStyle.Bold);
 
                 setUsername(form.getUsernameToStore());
+
+                FavoriteButton.Visible = true;
+                showFavoritesButton.Visible = true;
             }
         }
 
