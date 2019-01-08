@@ -43,7 +43,7 @@
             // 
             // ShowFavs
             // 
-            this.ShowFavs.Location = new System.Drawing.Point(1, 123);
+            this.ShowFavs.Location = new System.Drawing.Point(-3, 123);
             this.ShowFavs.Name = "ShowFavs";
             this.ShowFavs.Size = new System.Drawing.Size(75, 44);
             this.ShowFavs.TabIndex = 1;
