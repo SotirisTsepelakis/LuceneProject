@@ -23,6 +23,7 @@ namespace LuceneProject
         LemmaMediaTableAdapter lemmaMediaTableAdapter = new LemmaMediaTableAdapter();
         LemmaTableAdapter lemmaTableAdapter = new LemmaTableAdapter();
         MediaTableAdapter mediaTableAdapter = new MediaTableAdapter();
+        private string uname;
 
         public MainForm()
         {
@@ -116,9 +117,8 @@ namespace LuceneProject
                 title = page.Attributes["title"].InnerText;
 
             }
-          
 
-          //  favotiteTableAdapter.Insert(title, username);
+           // favotiteTableAdapter.Insert(title, username);
         }
 
         private void ExportButton_Click(object sender, EventArgs e)
@@ -151,6 +151,8 @@ namespace LuceneProject
                 toolStripRegisterButton.Visible = false;
                 toolStripLabel2.Text = "Signed in as " + form.getUsernameToStore();
                 toolStripLabel2.Font= new Font("Arial", 8, FontStyle.Bold);
+
+                setUsername(form.getUsernameToStore());
             }
         }
 
@@ -160,12 +162,9 @@ namespace LuceneProject
             form.ShowDialog();
         }
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        void setUsername(string uname)
         {
-
-            string category = e.Node.Text;
-            dataGridView1.DataSource = lemmaCategoryTableAdapter.GetDataByCategory(category);
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.uname = uname;
         }
     }
 }
