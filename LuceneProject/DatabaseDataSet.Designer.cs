@@ -3372,7 +3372,7 @@ namespace LuceneProject.DatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString1;
+            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3694,7 +3694,7 @@ namespace LuceneProject.DatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString1;
+            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4027,7 +4027,7 @@ namespace LuceneProject.DatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString1;
+            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4340,7 +4340,7 @@ namespace LuceneProject.DatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString1;
+            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4719,7 +4719,7 @@ namespace LuceneProject.DatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString1;
+            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5075,7 +5075,7 @@ namespace LuceneProject.DatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString1;
+            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5425,7 +5425,7 @@ namespace LuceneProject.DatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString1;
+            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

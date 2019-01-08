@@ -91,11 +91,13 @@ namespace LuceneProject
             string category = comboBox1.Text;
             string content = richTextBox2.Text;
 
-
+           
             lemmaTableAdapter.Insert(title);
             lemmaCategoryTableAdapter.Insert(category, title);
             mediaTableAdapter.Insert("doc", content);
-           // lemmaMediaTableAdapter.Insert(mediaID, title);
+            
+           lemmaMediaTableAdapter.Insert(1, title);
+            
         }
 
         private void FavoriteButton_Click(object sender, EventArgs e)
