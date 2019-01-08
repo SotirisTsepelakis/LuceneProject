@@ -189,6 +189,11 @@ namespace LuceneProject
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
 
+        private void showFavoritesButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             OleDbConnection con = new OleDbConnection

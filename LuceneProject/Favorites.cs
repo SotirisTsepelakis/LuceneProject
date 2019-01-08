@@ -29,12 +29,12 @@ namespace LuceneProject
 
 
           
-            if (name1 == MainForm.staticuname)
+            if (name1 == MainForm.staticUname)
             {
                 FavoriteGridView.DataSource = favotiteTableAdapter.GetDataByUsername(name1);
                 FavoriteGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             }
-            else if (name2 == MainForm.staticuname) { 
+            else if (name2 == MainForm.staticUname) { 
             FavoriteGridView.DataSource = favotiteTableAdapter.GetDataByUsername(name2);
             FavoriteGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             }

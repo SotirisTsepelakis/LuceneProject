@@ -180,6 +180,7 @@
             this.showFavoritesButton.Text = "My Favorites";
             this.showFavoritesButton.UseVisualStyleBackColor = true;
             this.showFavoritesButton.Visible = false;
+            this.showFavoritesButton.Click += new System.EventHandler(this.showFavoritesButton_Click);
             // 
             // comboBox1
             // 
