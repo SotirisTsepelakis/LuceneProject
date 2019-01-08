@@ -31,14 +31,21 @@ namespace LuceneProject
         public MainForm()
         {
             InitializeComponent();
-            /*using (Indexer indexer = new Indexer())
+            using (Indexer indexer = new Indexer())
             {
-                indexer.IndexDirectory = "Index";
-                indexer.DataDirectory = "Data";
-                indexer.Setup();
+                /* indexer.IndexDirectory = "Index";
+                 indexer.DataDirectory = "Data";
+                 indexer.Setup();
 
-                indexer.Index();
-            }*/
+                 indexer.Index();
+
+            */
+            }
+            Searcher searcher = new Searcher();
+
+            searcher.Search("people");
+
+            Console.WriteLine();
         }
 
         private void greekToolStripMenuItem_Click(object sender, EventArgs e)
@@ -103,12 +110,32 @@ namespace LuceneProject
             string category = comboBox1.Text;
             string content = richTextBox2.Text;
 
-           
-            lemmaTableAdapter.Insert(title);
-            lemmaCategoryTableAdapter.Insert(category, title);
-            mediaTableAdapter.Insert("doc", content);
 
-            lemmaMediaTableAdapter.Insert(1, title);
+            OleDbConnection con = new OleDbConnection
+            {
+                ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString2
+            };
+            con.Open();
+            OleDbCommand check_title = new OleDbCommand("SELECT COUNT(*) FROM Lemma WHERE title ='" + textBox1.Text + "'", con);
+            check_title.Parameters.AddWithValue("@title", textBox1.Text);
+            int TitleExist = (int)check_title.ExecuteScalar();
+
+            if (TitleExist > 0)
+            {
+                
+                MessageBox.Show("Article already exists");
+            }
+            else
+            {
+               
+                lemmaTableAdapter.Insert(title);
+                lemmaCategoryTableAdapter.Insert(category, title);
+                mediaTableAdapter.Insert("doc", content);
+
+                lemmaMediaTableAdapter.Insert(1, title);
+            }
+
+           
             
         }
 
@@ -128,8 +155,8 @@ namespace LuceneProject
                 title = page.Attributes["title"].InnerText;
 
             }
-            //
-           // favotiteTableAdapter.Insert(title, username);
+            
+            favotiteTableAdapter.Insert(title, staticUname);
         }
 
         private void ExportButton_Click(object sender, EventArgs e)
