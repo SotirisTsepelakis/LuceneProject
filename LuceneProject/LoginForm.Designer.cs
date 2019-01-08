@@ -113,7 +113,8 @@
             this.Controls.Add(this.passLabel);
             this.Controls.Add(this.usernameLabel);
             this.Name = "LoginForm";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

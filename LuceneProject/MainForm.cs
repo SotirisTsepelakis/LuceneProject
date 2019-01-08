@@ -28,6 +28,14 @@ namespace LuceneProject
         public MainForm()
         {
             InitializeComponent();
+            using (Indexer indexer = new Indexer())
+            {
+                indexer.IndexDirectory = "Index";
+                indexer.DataDirectory = "Data";
+                indexer.Setup();
+
+                indexer.Index();
+            }
         }
 
         private void greekToolStripMenuItem_Click(object sender, EventArgs e)

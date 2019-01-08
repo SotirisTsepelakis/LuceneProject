@@ -133,7 +133,8 @@
             this.Controls.Add(this.passLabel);
             this.Controls.Add(this.usernameLabel);
             this.Name = "RegisterForm";
-            this.Text = "RegisterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Register";
             this.ResumeLayout(false);
             this.PerformLayout();
 
