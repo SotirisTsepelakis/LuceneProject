@@ -235,7 +235,8 @@ namespace LuceneProject
 
         private void titleSearchbutton_Click(object sender, EventArgs e)
         {
-
+            dataGridView2.DataSource = lemmaTableAdapter.GetDataByTitleAndContent(textBox2.Text);
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
 
         private void keywordSearchbutton_Click(object sender, EventArgs e)
@@ -312,7 +313,7 @@ namespace LuceneProject
         {
             OleDbConnection con = new OleDbConnection
             {
-                ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString1
+                ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString2
             };
             con.Open();
             OleDbCommand cmd = new OleDbCommand("SELECT COUNT(*) FROM Lemma", con);
