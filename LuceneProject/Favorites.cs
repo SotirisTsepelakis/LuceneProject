@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using LuceneProject.DatabaseDataSetTableAdapters;
 namespace LuceneProject
 {
     public partial class Favorites : Form
@@ -17,10 +17,34 @@ namespace LuceneProject
             InitializeComponent();
         }
 
+        FavotiteTableAdapter favotiteTableAdapter = new FavotiteTableAdapter();
+        UsersTableAdapter usersTableAdapter = new UsersTableAdapter();
+        private string name1="user1";
+        private string name2 = "user2";
+    
+        
+
         private void ShowFavs_Click(object sender, EventArgs e)
         {
-          //  FavoriteGridView.DataSource = favoritesTableAdapter1.GetDataByFav();
+
+
+          
+            if (name1 == MainForm.staticuname)
+            {
+                FavoriteGridView.DataSource = favotiteTableAdapter.GetDataByUsername(name1);
+                FavoriteGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            }
+            else if (name2 == MainForm.staticuname) { 
+            FavoriteGridView.DataSource = favotiteTableAdapter.GetDataByUsername(name2);
             FavoriteGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            }
+            else
+            {
+
+                FavoriteGridView.DataSource = favotiteTableAdapter.GetData();
+                FavoriteGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            }
         }
+    
     }
 }

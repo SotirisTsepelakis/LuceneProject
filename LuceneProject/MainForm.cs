@@ -14,6 +14,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using LuceneProject.DatabaseDataSetTableAdapters;
 
+
 namespace LuceneProject
 {
     public partial class MainForm : Form
@@ -24,6 +25,9 @@ namespace LuceneProject
         LemmaTableAdapter lemmaTableAdapter = new LemmaTableAdapter();
         MediaTableAdapter mediaTableAdapter = new MediaTableAdapter();
         private string uname;
+
+        public static string staticuname;
+       
 
         public MainForm()
         {
@@ -92,7 +96,9 @@ namespace LuceneProject
             string category = comboBox1.Text;
             string content = richTextBox2.Text;
 
-           
+
+          
+
             lemmaTableAdapter.Insert(title);
             lemmaCategoryTableAdapter.Insert(category, title);
             mediaTableAdapter.Insert("doc", content);
@@ -118,7 +124,7 @@ namespace LuceneProject
 
             }
 
-           // favotiteTableAdapter.Insert(title, username);
+            favotiteTableAdapter.Insert(title, uname);
         }
 
         private void ExportButton_Click(object sender, EventArgs e)
@@ -130,7 +136,7 @@ namespace LuceneProject
             {
 
             }
-            System.IO.File.WriteAllLines(@"C:\Users\Stratos\Desktop\indexPath\IndexData\" + textBox1.Text + ".doc", richTextBox2.Lines);
+            System.IO.File.WriteAllLines(@"C:\Users\Stratos\Desktop\Wikipedia Exports\" + textBox1.Text + ".doc", richTextBox2.Lines);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -153,6 +159,7 @@ namespace LuceneProject
                 toolStripLabel2.Font= new Font("Arial", 8, FontStyle.Bold);
 
                 setUsername(form.getUsernameToStore());
+                staticuname = form.getUsernameToStore();
             }
         }
 
@@ -162,16 +169,40 @@ namespace LuceneProject
             form.ShowDialog();
         }
 
-        void setUsername(string uname)
+       void setUsername(string uname)
         {
             this.uname = uname;
         }
 
+       public string getUsername() {
+
+            return uname;
+
+        }
+       
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             string category = e.Node.Text;
             dataGridView1.DataSource = lemmaCategoryTableAdapter.GetDataByCategory(category);
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Favorites f = new Favorites();
+            f.Show();
+        }
+
+      /*  private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string title = dataGridView1[e.ColumnIndex, e.RowIndex].Value.ToString();
+            mediaTableAdapter.GetDataByTitle(title);
+        }
+*/
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string title = dataGridView1[e.ColumnIndex, e.RowIndex].Value.ToString();
+            mediaTableAdapter.GetDataByTitle(title);
         }
     }
 }
