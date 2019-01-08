@@ -13,7 +13,7 @@ using System.Web;
 using System.IO;
 using System.Text.RegularExpressions;
 using LuceneProject.DatabaseDataSetTableAdapters;
-
+using System.Data.OleDb;
 
 namespace LuceneProject
 {
@@ -25,13 +25,20 @@ namespace LuceneProject
         LemmaTableAdapter lemmaTableAdapter = new LemmaTableAdapter();
         MediaTableAdapter mediaTableAdapter = new MediaTableAdapter();
         private string uname;
-
-        public static string staticuname;
-       
+        public static string staticUname;
+        private int lowerBound=7, upperBound;
 
         public MainForm()
         {
             InitializeComponent();
+            /*using (Indexer indexer = new Indexer())
+            {
+                indexer.IndexDirectory = "Index";
+                indexer.DataDirectory = "Data";
+                indexer.Setup();
+
+                indexer.Index();
+            }*/
         }
 
         private void greekToolStripMenuItem_Click(object sender, EventArgs e)
@@ -96,14 +103,12 @@ namespace LuceneProject
             string category = comboBox1.Text;
             string content = richTextBox2.Text;
 
-
-          
-
+           
             lemmaTableAdapter.Insert(title);
             lemmaCategoryTableAdapter.Insert(category, title);
             mediaTableAdapter.Insert("doc", content);
-            
-           lemmaMediaTableAdapter.Insert(1, title);
+
+            lemmaMediaTableAdapter.Insert(1, title);
             
         }
 
@@ -124,7 +129,7 @@ namespace LuceneProject
 
             }
 
-            favotiteTableAdapter.Insert(title, uname);
+           // favotiteTableAdapter.Insert(title, username);
         }
 
         private void ExportButton_Click(object sender, EventArgs e)
@@ -136,7 +141,7 @@ namespace LuceneProject
             {
 
             }
-            System.IO.File.WriteAllLines(@"C:\Users\Stratos\Desktop\Wikipedia Exports\" + textBox1.Text + ".doc", richTextBox2.Lines);
+            System.IO.File.WriteAllLines(@"C:\Users\Stratos\Desktop\indexPath\IndexData\" + textBox1.Text + ".doc", richTextBox2.Lines);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -159,7 +164,10 @@ namespace LuceneProject
                 toolStripLabel2.Font= new Font("Arial", 8, FontStyle.Bold);
 
                 setUsername(form.getUsernameToStore());
-                staticuname = form.getUsernameToStore();
+                staticUname = form.getUsernameToStore();
+
+                FavoriteButton.Visible = true;
+                showFavoritesButton.Visible = true;
             }
         }
 
@@ -169,17 +177,11 @@ namespace LuceneProject
             form.ShowDialog();
         }
 
-       void setUsername(string uname)
+        void setUsername(string uname)
         {
             this.uname = uname;
         }
 
-       public string getUsername() {
-
-            return uname;
-
-        }
-       
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             string category = e.Node.Text;
@@ -187,22 +189,48 @@ namespace LuceneProject
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
-            Favorites f = new Favorites();
-            f.Show();
-        }
+            OleDbConnection con = new OleDbConnection
+            {
+                ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString1
+            };
+            con.Open();
+            OleDbCommand cmd = new OleDbCommand("SELECT COUNT(*) FROM Lemma", con);
 
-      /*  private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            string title = dataGridView1[e.ColumnIndex, e.RowIndex].Value.ToString();
-            mediaTableAdapter.GetDataByTitle(title);
-        }
-*/
-        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            string title = dataGridView1[e.ColumnIndex, e.RowIndex].Value.ToString();
-            mediaTableAdapter.GetDataByTitle(title);
+            try
+            {
+                upperBound = (int)cmd.ExecuteScalar();
+            }
+            catch (OleDbException exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            Random r = new Random();
+            int rInt = r.Next(lowerBound, upperBound+1);
+            Console.Write(rInt);
+
+            con.Open();
+            OleDbCommand cmd2 = new OleDbCommand("SELECT content FROM Media WHERE ID='" + rInt + "'", con);
+
+            try
+            {
+                string content = (string)cmd2.ExecuteScalar();
+                richTextBox1.Text = content;
+            }
+            catch (OleDbException exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+            finally
+            {
+                con.Close();
+            }        
         }
     }
 }

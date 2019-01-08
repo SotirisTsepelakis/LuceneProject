@@ -218,7 +218,7 @@ WHERE        (CategoryName = ?)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LemmaMediaTableAdapter" GeneratorDataComponentClassName="LemmaMediaTableAdapter" Name="LemmaMedia" UserDataComponentName="LemmaMediaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="CyclopediaBaseConnectionString2 (Settings)" DbObjectName="LemmaMedia" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="CyclopediaBaseConnectionString1 (Settings)" DbObjectName="LemmaMedia" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `LemmaMedia` WHERE ((`MediaID` = ?) AND (`LemmaTitle` = ?))</CommandText>
@@ -238,7 +238,7 @@ WHERE        (CategoryName = ?)</CommandText>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT MediaID, LemmaTitle FROM LemmaMedia</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -261,7 +261,7 @@ WHERE        (CategoryName = ?)</CommandText>
               <Mapping SourceColumn="LemmaTitle" DataSetColumn="LemmaTitle" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="CyclopediaBaseConnectionString2 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetAllDataFromLemmaAndMedia" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetAllDataFromLemmaAndMedia" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetAllDataFromLemmaAndMedia" UserSourceName="FillBy">
+              <DbSource ConnectionRef="CyclopediaBaseConnectionString2 (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetAllDataFromLemmaAndMedia" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetAllDataFromLemmaAndMedia" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetAllDataFromLemmaAndMedia" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT lm.MediaID, lm.LemmaTitle, m.type, m.content
@@ -345,7 +345,7 @@ WHERE        (l.title = ?)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UsersTableAdapter" GeneratorDataComponentClassName="UsersTableAdapter" Name="Users" UserDataComponentName="UsersTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="CyclopediaBaseConnectionString2 (Settings)" DbObjectName="Users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="CyclopediaBaseConnectionString1 (Settings)" DbObjectName="Users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Users` WHERE ((`Username` = ?) AND ((? = 1 AND `Password` IS NULL) OR (`Password` = ?)) AND ((? = 1 AND `Email` IS NULL) OR (`Email` = ?)))</CommandText>
@@ -369,7 +369,7 @@ WHERE        (l.title = ?)</CommandText>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT Username, [Password], Email FROM Users</CommandText>
                     <Parameters />
                   </DbCommand>

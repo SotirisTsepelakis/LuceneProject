@@ -45,7 +45,7 @@ namespace LuceneProject
         //will be called from the main form
         public int Index()
         {
-            String[] files = System.IO.Directory.GetFileSystemEntries(DataDirectory);
+            //String[] files = System.IO.Directory.GetFileSystemEntries(DataDirectory);
             LemmaMediaTableAdapter lemmaMediaTableAdapter = new LemmaMediaTableAdapter();
             DataTable dataTable = lemmaMediaTableAdapter.GetAllDataFromLemmaAndMedia();
 
