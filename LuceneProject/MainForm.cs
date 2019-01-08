@@ -128,7 +128,7 @@ namespace LuceneProject
                 title = page.Attributes["title"].InnerText;
 
             }
-
+            //
            // favotiteTableAdapter.Insert(title, username);
         }
 
