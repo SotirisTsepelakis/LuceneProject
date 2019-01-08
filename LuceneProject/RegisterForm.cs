@@ -28,7 +28,7 @@ namespace LuceneProject
             {
                 OleDbConnection con = new OleDbConnection
                 {
-                    ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString2
+                    ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString1
                 };
                 con.Open();
                 string username = textBox1.Text;

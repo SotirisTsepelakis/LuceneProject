@@ -14,6 +14,9 @@ namespace LuceneProject
 {
     public partial class LoginForm : Form
     {
+        private bool loggedIn = false;
+        private string usernameToStore;
+
         public LoginForm()
         {
             InitializeComponent();
@@ -23,7 +26,7 @@ namespace LuceneProject
         {
             OleDbConnection con = new OleDbConnection
             {
-                ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString2
+                ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString1
             };
             con.Open();
             string username = textBox1.Text;
@@ -37,6 +40,8 @@ namespace LuceneProject
             if (dt.Rows.Count > 0)
             {
                 MessageBox.Show("You logged in succesfully");
+                loggedIn = true;
+                usernameToStore = username;
                 this.Close();
             }
             else
@@ -48,6 +53,16 @@ namespace LuceneProject
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public bool getLoggedIn()
+        {
+            return loggedIn;
+        }
+
+        public string getUsernameToStore()
+        {
+            return usernameToStore;
         }
     }
 }
