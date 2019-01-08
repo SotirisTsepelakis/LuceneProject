@@ -141,6 +141,14 @@ namespace LuceneProject
         {
             LoginForm form = new LoginForm();
             form.ShowDialog();
+
+            if (form.getLoggedIn())
+            {
+                toolStripSignInButton.Visible = false;
+                toolStripRegisterButton.Visible = false;
+                toolStripLabel2.Text = "Signed in as " + form.getUsernameToStore();
+                toolStripLabel2.Font= new Font("Arial", 8, FontStyle.Bold);
+            }
         }
 
         private void toolStripRegisterButton_Click(object sender, EventArgs e)
