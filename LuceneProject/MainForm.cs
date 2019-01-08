@@ -168,7 +168,7 @@ namespace LuceneProject
             {
 
             }
-            System.IO.File.WriteAllLines(@"C:\Users\Stratos\Desktop\indexPath\IndexData\" + textBox1.Text + ".doc", richTextBox2.Lines);
+            System.IO.File.WriteAllLines(@"C:\Users\Stratos\Desktop\Wikipedia Exports\" + textBox1.Text + ".doc", richTextBox2.Lines);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -221,6 +221,22 @@ namespace LuceneProject
             Favorites f = new Favorites();
             f.Show();
         }
+
+        private void Print_Click(object sender, EventArgs e)
+        {
+            if (printPreviewDialog1.ShowDialog() == DialogResult.OK)
+            {
+
+                printDocument1.Print();
+            }
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString(richTextBox2.Text, new Font("Time New Romans", 14, FontStyle.Bold), Brushes.Black, new PointF(100, 100));
+        }
+
+       
 
         private void MainForm_Load(object sender, EventArgs e)
         {
