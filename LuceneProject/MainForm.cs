@@ -116,8 +116,9 @@ namespace LuceneProject
                 title = page.Attributes["title"].InnerText;
 
             }
+          
 
-           // favotiteTableAdapter.Insert(title, username);
+          //  favotiteTableAdapter.Insert(title, username);
         }
 
         private void ExportButton_Click(object sender, EventArgs e)
@@ -157,6 +158,14 @@ namespace LuceneProject
         {
             RegisterForm form = new RegisterForm();
             form.ShowDialog();
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+            string category = e.Node.Text;
+            dataGridView1.DataSource = lemmaCategoryTableAdapter.GetDataByCategory(category);
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
     }
 }

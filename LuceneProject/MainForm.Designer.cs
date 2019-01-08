@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Religion");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Sports");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("World");
             this.basicMenuStrip = new System.Windows.Forms.MenuStrip();
             this.toolStripDropDownLanguageButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.greekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,6 +59,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.basicMenuStrip.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -156,9 +160,9 @@
             this.tabPage2.Controls.Add(this.textBox1);
             this.tabPage2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.Size = new System.Drawing.Size(712, 354);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Search";
@@ -260,9 +264,9 @@
             // 
             this.tabPage1.Controls.Add(this.articleTableLayoutPanel);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(712, 354);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main Page";
@@ -278,7 +282,7 @@
             this.articleTableLayoutPanel.Controls.Add(this.richTextBox1, 0, 1);
             this.articleTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.articleTableLayoutPanel.Location = new System.Drawing.Point(2, 2);
-            this.articleTableLayoutPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.articleTableLayoutPanel.Margin = new System.Windows.Forms.Padding(2);
             this.articleTableLayoutPanel.Name = "articleTableLayoutPanel";
             this.articleTableLayoutPanel.RowCount = 2;
             this.articleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.996915F));
@@ -317,7 +321,7 @@
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox1.Location = new System.Drawing.Point(2, 22);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(350, 326);
             this.richTextBox1.TabIndex = 2;
@@ -330,7 +334,7 @@
             this.BaseSearch.Controls.Add(this.tabPage3);
             this.BaseSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BaseSearch.Location = new System.Drawing.Point(0, 32);
-            this.BaseSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BaseSearch.Margin = new System.Windows.Forms.Padding(2);
             this.BaseSearch.Name = "BaseSearch";
             this.BaseSearch.SelectedIndex = 0;
             this.BaseSearch.Size = new System.Drawing.Size(720, 380);
@@ -338,6 +342,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.treeView1);
             this.tabPage3.Controls.Add(this.dataGridView1);
             this.tabPage3.Controls.Add(this.button3);
             this.tabPage3.Controls.Add(this.button2);
@@ -345,7 +350,7 @@
             this.tabPage3.Controls.Add(this.textBox2);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(712, 354);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "BaseSearch";
@@ -362,7 +367,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(415, 76);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(109, 26);
             this.button3.TabIndex = 8;
@@ -373,7 +378,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(289, 76);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(107, 26);
             this.button2.TabIndex = 7;
@@ -383,7 +388,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(187, 76);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(81, 36);
             this.button1.TabIndex = 6;
@@ -393,10 +398,28 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(187, 36);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(338, 20);
             this.textBox2.TabIndex = 5;
+            // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(0, 36);
+            this.treeView1.Name = "treeView1";
+            treeNode1.Name = "Religion";
+            treeNode1.Text = "Religion";
+            treeNode2.Name = "Sports";
+            treeNode2.Text = "Sports";
+            treeNode3.Name = "World";
+            treeNode3.Text = "World";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3});
+            this.treeView1.Size = new System.Drawing.Size(121, 97);
+            this.treeView1.TabIndex = 10;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // MainForm
             // 
@@ -405,7 +428,7 @@
             this.ClientSize = new System.Drawing.Size(720, 412);
             this.Controls.Add(this.BaseSearch);
             this.Controls.Add(this.basicMenuStrip);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "Cyclopedia";
             this.basicMenuStrip.ResumeLayout(false);
@@ -451,5 +474,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }
