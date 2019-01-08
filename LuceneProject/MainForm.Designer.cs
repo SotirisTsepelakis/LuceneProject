@@ -30,9 +30,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Religion");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Sports");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("World");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Religion");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Sports");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("World");
             this.basicMenuStrip = new System.Windows.Forms.MenuStrip();
             this.toolStripDropDownLanguageButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.greekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,10 +58,10 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.keywordSearchbutton = new System.Windows.Forms.Button();
+            this.titleSearchbutton = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.printButton = new System.Windows.Forms.Button();
             this.basicMenuStrip.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -153,6 +153,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.printButton);
             this.tabPage2.Controls.Add(this.showFavoritesButton);
             this.tabPage2.Controls.Add(this.comboBox1);
             this.tabPage2.Controls.Add(this.richTextBox2);
@@ -366,9 +367,8 @@
             // 
             this.tabPage3.Controls.Add(this.treeView1);
             this.tabPage3.Controls.Add(this.dataGridView1);
-            this.tabPage3.Controls.Add(this.button3);
-            this.tabPage3.Controls.Add(this.button2);
-            this.tabPage3.Controls.Add(this.button1);
+            this.tabPage3.Controls.Add(this.keywordSearchbutton);
+            this.tabPage3.Controls.Add(this.titleSearchbutton);
             this.tabPage3.Controls.Add(this.textBox2);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
@@ -384,16 +384,16 @@
             this.treeView1.Location = new System.Drawing.Point(0, 44);
             this.treeView1.Margin = new System.Windows.Forms.Padding(4);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Religion";
-            treeNode1.Text = "Religion";
-            treeNode2.Name = "Sports";
-            treeNode2.Text = "Sports";
-            treeNode3.Name = "World";
-            treeNode3.Text = "World";
+            treeNode16.Name = "Religion";
+            treeNode16.Text = "Religion";
+            treeNode17.Name = "Sports";
+            treeNode17.Text = "Sports";
+            treeNode18.Name = "World";
+            treeNode18.Text = "World";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3});
+            treeNode16,
+            treeNode17,
+            treeNode18});
             this.treeView1.Size = new System.Drawing.Size(160, 118);
             this.treeView1.TabIndex = 10;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -401,42 +401,33 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(249, 208);
+            this.dataGridView1.Location = new System.Drawing.Point(249, 207);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(320, 185);
             this.dataGridView1.TabIndex = 9;
             // 
-            // button3
+            // keywordSearchbutton
             // 
-            this.button3.Location = new System.Drawing.Point(553, 94);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(145, 32);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Search by category";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.keywordSearchbutton.Location = new System.Drawing.Point(555, 94);
+            this.keywordSearchbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.keywordSearchbutton.Name = "keywordSearchbutton";
+            this.keywordSearchbutton.Size = new System.Drawing.Size(143, 44);
+            this.keywordSearchbutton.TabIndex = 7;
+            this.keywordSearchbutton.Text = "Search by keyword";
+            this.keywordSearchbutton.UseVisualStyleBackColor = true;
+            this.keywordSearchbutton.Click += new System.EventHandler(this.keywordSearchbutton_Click);
             // 
-            // button2
+            // titleSearchbutton
             // 
-            this.button2.Location = new System.Drawing.Point(385, 94);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 32);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Search by keyword";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(249, 94);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 44);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Search by title";
-            this.button1.UseVisualStyleBackColor = true;
+            this.titleSearchbutton.Location = new System.Drawing.Point(249, 94);
+            this.titleSearchbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.titleSearchbutton.Name = "titleSearchbutton";
+            this.titleSearchbutton.Size = new System.Drawing.Size(108, 44);
+            this.titleSearchbutton.TabIndex = 6;
+            this.titleSearchbutton.Text = "Search by title";
+            this.titleSearchbutton.UseVisualStyleBackColor = true;
+            this.titleSearchbutton.Click += new System.EventHandler(this.titleSearchbutton_Click);
             // 
             // textBox2
             // 
@@ -445,6 +436,16 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(449, 22);
             this.textBox2.TabIndex = 5;
+            // 
+            // printButton
+            // 
+            this.printButton.Location = new System.Drawing.Point(561, 250);
+            this.printButton.Name = "printButton";
+            this.printButton.Size = new System.Drawing.Size(96, 28);
+            this.printButton.TabIndex = 22;
+            this.printButton.Text = "Print";
+            this.printButton.UseVisualStyleBackColor = true;
+            this.printButton.Click += new System.EventHandler(this.printButton_Click);
             // 
             // MainForm
             // 
@@ -497,11 +498,11 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button keywordSearchbutton;
+        private System.Windows.Forms.Button titleSearchbutton;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Button showFavoritesButton;
+        private System.Windows.Forms.Button printButton;
     }
 }

@@ -14,6 +14,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using LuceneProject.DatabaseDataSetTableAdapters;
 using System.Data.OleDb;
+using System.Drawing.Printing;
 
 namespace LuceneProject
 {
@@ -26,7 +27,7 @@ namespace LuceneProject
         MediaTableAdapter mediaTableAdapter = new MediaTableAdapter();
         private string uname;
         public static string staticUname;
-        private int lowerBound=7, upperBound;
+        private int lowerBound=1, upperBound;
 
         public MainForm()
         {
@@ -90,7 +91,6 @@ namespace LuceneProject
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-
             textBox1.Text = textBox1.Text.ToLower();
             var webclient = new WebClient();
             var pageSourceCode = webclient.DownloadString("http://en.wikipedia.org/w/api.php?format=xml&action=query&prop=extracts&titles=" + textBox1.Text + "&redirects=true");
@@ -100,7 +100,6 @@ namespace LuceneProject
             XmlNodeList pagelist = doc.SelectNodes("//page");
             string title = "";
 
-
             foreach (XmlNode page in pagelist)
             {
                 title = page.Attributes["title"].InnerText;
@@ -109,7 +108,6 @@ namespace LuceneProject
 
             string category = comboBox1.Text;
             string content = richTextBox2.Text;
-
 
             OleDbConnection con = new OleDbConnection
             {
@@ -121,22 +119,17 @@ namespace LuceneProject
             int TitleExist = (int)check_title.ExecuteScalar();
 
             if (TitleExist > 0)
-            {
-                
+            {              
                 MessageBox.Show("Article already exists");
             }
             else
-            {
-               
+            {   
                 lemmaTableAdapter.Insert(title);
                 lemmaCategoryTableAdapter.Insert(category, title);
                 mediaTableAdapter.Insert("doc", content);
 
                 lemmaMediaTableAdapter.Insert(1, title);
             }
-
-           
-            
         }
 
         private void FavoriteButton_Click(object sender, EventArgs e)
@@ -222,11 +215,67 @@ namespace LuceneProject
             f.Show();
         }
 
+        private void titleSearchbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void keywordSearchbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void printButton_Click(object sender, EventArgs e)
+        {
+            PrintDialog printDialog = new PrintDialog();
+            PrintDocument documentToPrint = new PrintDocument();
+            printDialog.Document = documentToPrint;
+
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                StringReader reader = new StringReader(richTextBox2.Text);
+                documentToPrint.PrintPage += new PrintPageEventHandler(DocumentToPrint_PrintPage);
+                documentToPrint.Print();
+            }
+        }
+
+        private void DocumentToPrint_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            StringReader reader = new StringReader(richTextBox2.Text);
+            float LinesPerPage = 0;
+            float YPosition = 0;
+            int Count = 0;
+            float LeftMargin = e.MarginBounds.Left;
+            float TopMargin = e.MarginBounds.Top;
+            string Line = null;
+            Font PrintFont = this.richTextBox2.Font;
+            SolidBrush PrintBrush = new SolidBrush(Color.Black);
+
+            LinesPerPage = e.MarginBounds.Height / PrintFont.GetHeight(e.Graphics);
+
+            while (Count < LinesPerPage && ((Line = reader.ReadLine()) != null))
+            {
+                YPosition = TopMargin + (Count * PrintFont.GetHeight(e.Graphics));
+                e.Graphics.DrawString(Line, PrintFont, PrintBrush, LeftMargin, YPosition, new StringFormat());
+                Count++;
+            }
+
+            if (Line != null)
+            {
+                e.HasMorePages = true;
+            }
+            else
+            {
+                e.HasMorePages = false;
+            }
+            PrintBrush.Dispose();
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             OleDbConnection con = new OleDbConnection
             {
-                ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString2
+                ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString1
             };
             con.Open();
             OleDbCommand cmd = new OleDbCommand("SELECT COUNT(*) FROM Lemma", con);
