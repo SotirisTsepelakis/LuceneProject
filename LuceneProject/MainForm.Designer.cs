@@ -54,12 +54,12 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.BaseSearch = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.treeView1 = new System.Windows.Forms.TreeView();
             this.basicMenuStrip.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -356,6 +356,24 @@
             this.tabPage3.Text = "BaseSearch";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(0, 36);
+            this.treeView1.Name = "treeView1";
+            treeNode1.Name = "Religion";
+            treeNode1.Text = "Religion";
+            treeNode2.Name = "Sports";
+            treeNode2.Text = "Sports";
+            treeNode3.Name = "World";
+            treeNode3.Text = "World";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3});
+            this.treeView1.Size = new System.Drawing.Size(121, 97);
+            this.treeView1.TabIndex = 10;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -402,24 +420,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(338, 20);
             this.textBox2.TabIndex = 5;
-            // 
-            // treeView1
-            // 
-            this.treeView1.Location = new System.Drawing.Point(0, 36);
-            this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Religion";
-            treeNode1.Text = "Religion";
-            treeNode2.Name = "Sports";
-            treeNode2.Text = "Sports";
-            treeNode3.Name = "World";
-            treeNode3.Text = "World";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3});
-            this.treeView1.Size = new System.Drawing.Size(121, 97);
-            this.treeView1.TabIndex = 10;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // MainForm
             // 
