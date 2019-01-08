@@ -241,41 +241,28 @@ namespace LuceneProject
 
         private void DocumentToPrint_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            StringReader reader = new StringReader(richTextBox2.Text);
-            float LinesPerPage = 0;
-            float YPosition = 0;
-            int Count = 0;
-            float LeftMargin = e.MarginBounds.Left;
-            float TopMargin = e.MarginBounds.Top;
-            string Line = null;
-            Font PrintFont = this.richTextBox2.Font;
-            SolidBrush PrintBrush = new SolidBrush(Color.Black);
 
-            LinesPerPage = e.MarginBounds.Height / PrintFont.GetHeight(e.Graphics);
+        }
 
-            while (Count < LinesPerPage && ((Line = reader.ReadLine()) != null))
+        private void PrintPdf_Click(object sender, EventArgs e)
+        {
+            if (printPreviewDialog1.ShowDialog() == DialogResult.OK)
             {
-                YPosition = TopMargin + (Count * PrintFont.GetHeight(e.Graphics));
-                e.Graphics.DrawString(Line, PrintFont, PrintBrush, LeftMargin, YPosition, new StringFormat());
-                Count++;
-            }
 
-            if (Line != null)
-            {
-                e.HasMorePages = true;
+                printDocument1.Print();
             }
-            else
-            {
-                e.HasMorePages = false;
-            }
-            PrintBrush.Dispose();
+        }
+
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString(richTextBox2.Text, new Font("Time New Romans", 14, FontStyle.Bold), Brushes.Black, new PointF(100, 100));
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             OleDbConnection con = new OleDbConnection
             {
-                ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString1
+                ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString2
             };
             con.Open();
             OleDbCommand cmd = new OleDbCommand("SELECT COUNT(*) FROM Lemma", con);

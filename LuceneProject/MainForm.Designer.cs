@@ -30,9 +30,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Religion");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Sports");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("World");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Religion");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Sports");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("World");
             this.basicMenuStrip = new System.Windows.Forms.MenuStrip();
             this.toolStripDropDownLanguageButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.greekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,6 +41,7 @@
             this.toolStripSignInButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripLogoLabel = new System.Windows.Forms.ToolStripLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.printButton = new System.Windows.Forms.Button();
             this.showFavoritesButton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
@@ -61,7 +62,9 @@
             this.keywordSearchbutton = new System.Windows.Forms.Button();
             this.titleSearchbutton = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.printButton = new System.Windows.Forms.Button();
+            this.PrintPdf = new System.Windows.Forms.Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.basicMenuStrip.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -84,8 +87,8 @@
             this.toolStripLogoLabel});
             this.basicMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.basicMenuStrip.Name = "basicMenuStrip";
-            this.basicMenuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.basicMenuStrip.Size = new System.Drawing.Size(960, 39);
+            this.basicMenuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.basicMenuStrip.Size = new System.Drawing.Size(720, 32);
             this.basicMenuStrip.TabIndex = 3;
             // 
             // toolStripDropDownLanguageButton
@@ -120,7 +123,7 @@
             this.toolStripRegisterButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripRegisterButton.Image")));
             this.toolStripRegisterButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripRegisterButton.Name = "toolStripRegisterButton";
-            this.toolStripRegisterButton.Size = new System.Drawing.Size(114, 32);
+            this.toolStripRegisterButton.Size = new System.Drawing.Size(93, 25);
             this.toolStripRegisterButton.Text = "Create Account";
             this.toolStripRegisterButton.Click += new System.EventHandler(this.toolStripRegisterButton_Click);
             // 
@@ -128,7 +131,7 @@
             // 
             this.toolStripLabel2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(23, 32);
+            this.toolStripLabel2.Size = new System.Drawing.Size(18, 25);
             this.toolStripLabel2.Text = "or";
             // 
             // toolStripSignInButton
@@ -139,7 +142,7 @@
             this.toolStripSignInButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSignInButton.Image")));
             this.toolStripSignInButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSignInButton.Name = "toolStripSignInButton";
-            this.toolStripSignInButton.Size = new System.Drawing.Size(58, 32);
+            this.toolStripSignInButton.Size = new System.Drawing.Size(47, 25);
             this.toolStripSignInButton.Text = "Sign In";
             this.toolStripSignInButton.Click += new System.EventHandler(this.toolStripSignInButton_Click);
             // 
@@ -153,6 +156,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.PrintPdf);
             this.tabPage2.Controls.Add(this.printButton);
             this.tabPage2.Controls.Add(this.showFavoritesButton);
             this.tabPage2.Controls.Add(this.comboBox1);
@@ -163,20 +167,32 @@
             this.tabPage2.Controls.Add(this.SearchButton);
             this.tabPage2.Controls.Add(this.textBox1);
             this.tabPage2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(952, 439);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Size = new System.Drawing.Size(712, 354);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Search";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // printButton
+            // 
+            this.printButton.Location = new System.Drawing.Point(421, 203);
+            this.printButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.printButton.Name = "printButton";
+            this.printButton.Size = new System.Drawing.Size(72, 23);
+            this.printButton.TabIndex = 22;
+            this.printButton.Text = "Print";
+            this.printButton.UseVisualStyleBackColor = true;
+            this.printButton.Click += new System.EventHandler(this.printButton_Click);
+            // 
             // showFavoritesButton
             // 
-            this.showFavoritesButton.Location = new System.Drawing.Point(425, 379);
+            this.showFavoritesButton.Location = new System.Drawing.Point(319, 308);
+            this.showFavoritesButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.showFavoritesButton.Name = "showFavoritesButton";
-            this.showFavoritesButton.Size = new System.Drawing.Size(105, 28);
+            this.showFavoritesButton.Size = new System.Drawing.Size(79, 23);
             this.showFavoritesButton.TabIndex = 21;
             this.showFavoritesButton.Text = "My Favorites";
             this.showFavoritesButton.UseVisualStyleBackColor = true;
@@ -215,27 +231,24 @@
             "Technology",
             "Universe",
             "World"});
-            this.comboBox1.Location = new System.Drawing.Point(227, 382);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox1.Location = new System.Drawing.Point(170, 310);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 24);
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 20;
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(101, 166);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.richTextBox2.Location = new System.Drawing.Point(76, 135);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(429, 182);
+            this.richTextBox2.Size = new System.Drawing.Size(323, 149);
             this.richTextBox2.TabIndex = 19;
             this.richTextBox2.Text = "";
             // 
             // FavoriteButton
             // 
-            this.FavoriteButton.Location = new System.Drawing.Point(101, 379);
-            this.FavoriteButton.Margin = new System.Windows.Forms.Padding(4);
+            this.FavoriteButton.Location = new System.Drawing.Point(76, 308);
             this.FavoriteButton.Name = "FavoriteButton";
-            this.FavoriteButton.Size = new System.Drawing.Size(100, 28);
+            this.FavoriteButton.Size = new System.Drawing.Size(75, 23);
             this.FavoriteButton.TabIndex = 18;
             this.FavoriteButton.Text = "Favorite";
             this.FavoriteButton.UseVisualStyleBackColor = true;
@@ -244,10 +257,9 @@
             // 
             // ExportButton
             // 
-            this.ExportButton.Location = new System.Drawing.Point(227, 106);
-            this.ExportButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ExportButton.Location = new System.Drawing.Point(170, 86);
             this.ExportButton.Name = "ExportButton";
-            this.ExportButton.Size = new System.Drawing.Size(100, 28);
+            this.ExportButton.Size = new System.Drawing.Size(75, 23);
             this.ExportButton.TabIndex = 17;
             this.ExportButton.Text = "Export";
             this.ExportButton.UseVisualStyleBackColor = true;
@@ -255,10 +267,9 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(101, 106);
-            this.SaveButton.Margin = new System.Windows.Forms.Padding(4);
+            this.SaveButton.Location = new System.Drawing.Point(76, 86);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(100, 28);
+            this.SaveButton.Size = new System.Drawing.Size(75, 23);
             this.SaveButton.TabIndex = 16;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -266,10 +277,9 @@
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(431, 48);
-            this.SearchButton.Margin = new System.Windows.Forms.Padding(4);
+            this.SearchButton.Location = new System.Drawing.Point(323, 39);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(100, 28);
+            this.SearchButton.Size = new System.Drawing.Size(75, 23);
             this.SearchButton.TabIndex = 15;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
@@ -277,20 +287,19 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(101, 50);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Location = new System.Drawing.Point(76, 41);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(225, 22);
+            this.textBox1.Size = new System.Drawing.Size(170, 20);
             this.textBox1.TabIndex = 14;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.articleTableLayoutPanel);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(952, 439);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Size = new System.Drawing.Size(712, 354);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main Page";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -304,13 +313,13 @@
             this.articleTableLayoutPanel.Controls.Add(this.label2, 1, 0);
             this.articleTableLayoutPanel.Controls.Add(this.richTextBox1, 0, 1);
             this.articleTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.articleTableLayoutPanel.Location = new System.Drawing.Point(3, 2);
-            this.articleTableLayoutPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.articleTableLayoutPanel.Location = new System.Drawing.Point(2, 2);
+            this.articleTableLayoutPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.articleTableLayoutPanel.Name = "articleTableLayoutPanel";
             this.articleTableLayoutPanel.RowCount = 2;
             this.articleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.996915F));
             this.articleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 94.00308F));
-            this.articleTableLayoutPanel.Size = new System.Drawing.Size(946, 435);
+            this.articleTableLayoutPanel.Size = new System.Drawing.Size(708, 350);
             this.articleTableLayoutPanel.TabIndex = 0;
             this.articleTableLayoutPanel.CellPaint += new System.Windows.Forms.TableLayoutCellPaintEventHandler(this.articleTableLayoutPanel_CellPaint);
             // 
@@ -319,10 +328,10 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label1.Location = new System.Drawing.Point(3, 2);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
+            this.label1.Location = new System.Drawing.Point(2, 2);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(467, 22);
+            this.label1.Size = new System.Drawing.Size(350, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Today\'s Suggested Article";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -332,10 +341,10 @@
             this.label2.BackColor = System.Drawing.Color.PeachPuff;
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label2.Location = new System.Drawing.Point(476, 2);
-            this.label2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
+            this.label2.Location = new System.Drawing.Point(356, 2);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(467, 22);
+            this.label2.Size = new System.Drawing.Size(350, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "On this day";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -343,10 +352,10 @@
             // richTextBox1
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(3, 28);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.richTextBox1.Location = new System.Drawing.Point(2, 22);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(467, 405);
+            this.richTextBox1.Size = new System.Drawing.Size(350, 326);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             // 
@@ -356,11 +365,11 @@
             this.BaseSearch.Controls.Add(this.tabPage2);
             this.BaseSearch.Controls.Add(this.tabPage3);
             this.BaseSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BaseSearch.Location = new System.Drawing.Point(0, 39);
-            this.BaseSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BaseSearch.Location = new System.Drawing.Point(0, 32);
+            this.BaseSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BaseSearch.Name = "BaseSearch";
             this.BaseSearch.SelectedIndex = 0;
-            this.BaseSearch.Size = new System.Drawing.Size(960, 468);
+            this.BaseSearch.Size = new System.Drawing.Size(720, 380);
             this.BaseSearch.TabIndex = 4;
             // 
             // tabPage3
@@ -370,49 +379,46 @@
             this.tabPage3.Controls.Add(this.keywordSearchbutton);
             this.tabPage3.Controls.Add(this.titleSearchbutton);
             this.tabPage3.Controls.Add(this.textBox2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage3.Size = new System.Drawing.Size(952, 439);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Size = new System.Drawing.Size(712, 354);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "BaseSearch";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // treeView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(0, 44);
-            this.treeView1.Margin = new System.Windows.Forms.Padding(4);
+            this.treeView1.Location = new System.Drawing.Point(0, 36);
             this.treeView1.Name = "treeView1";
-            treeNode16.Name = "Religion";
-            treeNode16.Text = "Religion";
-            treeNode17.Name = "Sports";
-            treeNode17.Text = "Sports";
-            treeNode18.Name = "World";
-            treeNode18.Text = "World";
+            treeNode10.Name = "Religion";
+            treeNode10.Text = "Religion";
+            treeNode11.Name = "Sports";
+            treeNode11.Text = "Sports";
+            treeNode12.Name = "World";
+            treeNode12.Text = "World";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode16,
-            treeNode17,
-            treeNode18});
-            this.treeView1.Size = new System.Drawing.Size(160, 118);
+            treeNode10,
+            treeNode11,
+            treeNode12});
+            this.treeView1.Size = new System.Drawing.Size(121, 97);
             this.treeView1.TabIndex = 10;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(249, 207);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(187, 168);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(320, 185);
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 9;
             // 
             // keywordSearchbutton
             // 
-            this.keywordSearchbutton.Location = new System.Drawing.Point(555, 94);
-            this.keywordSearchbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.keywordSearchbutton.Location = new System.Drawing.Point(416, 76);
+            this.keywordSearchbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.keywordSearchbutton.Name = "keywordSearchbutton";
-            this.keywordSearchbutton.Size = new System.Drawing.Size(143, 44);
+            this.keywordSearchbutton.Size = new System.Drawing.Size(107, 36);
             this.keywordSearchbutton.TabIndex = 7;
             this.keywordSearchbutton.Text = "Search by keyword";
             this.keywordSearchbutton.UseVisualStyleBackColor = true;
@@ -420,10 +426,10 @@
             // 
             // titleSearchbutton
             // 
-            this.titleSearchbutton.Location = new System.Drawing.Point(249, 94);
-            this.titleSearchbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.titleSearchbutton.Location = new System.Drawing.Point(187, 76);
+            this.titleSearchbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.titleSearchbutton.Name = "titleSearchbutton";
-            this.titleSearchbutton.Size = new System.Drawing.Size(108, 44);
+            this.titleSearchbutton.Size = new System.Drawing.Size(81, 36);
             this.titleSearchbutton.TabIndex = 6;
             this.titleSearchbutton.Text = "Search by title";
             this.titleSearchbutton.UseVisualStyleBackColor = true;
@@ -431,30 +437,45 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(249, 44);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox2.Location = new System.Drawing.Point(187, 36);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(449, 22);
+            this.textBox2.Size = new System.Drawing.Size(338, 20);
             this.textBox2.TabIndex = 5;
             // 
-            // printButton
+            // PrintPdf
             // 
-            this.printButton.Location = new System.Drawing.Point(561, 250);
-            this.printButton.Name = "printButton";
-            this.printButton.Size = new System.Drawing.Size(96, 28);
-            this.printButton.TabIndex = 22;
-            this.printButton.Text = "Print";
-            this.printButton.UseVisualStyleBackColor = true;
-            this.printButton.Click += new System.EventHandler(this.printButton_Click);
+            this.PrintPdf.Location = new System.Drawing.Point(323, 85);
+            this.PrintPdf.Name = "PrintPdf";
+            this.PrintPdf.Size = new System.Drawing.Size(75, 23);
+            this.PrintPdf.TabIndex = 23;
+            this.PrintPdf.Text = "Print_to_Pdf";
+            this.PrintPdf.UseVisualStyleBackColor = true;
+            this.PrintPdf.Click += new System.EventHandler(this.PrintPdf_Click);
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(960, 507);
+            this.ClientSize = new System.Drawing.Size(720, 412);
             this.Controls.Add(this.BaseSearch);
             this.Controls.Add(this.basicMenuStrip);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cyclopedia";
@@ -504,5 +525,8 @@
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Button showFavoritesButton;
         private System.Windows.Forms.Button printButton;
+        private System.Windows.Forms.Button PrintPdf;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
