@@ -80,6 +80,7 @@
       <DependentUpon>Favorites.cs</DependentUpon>
     </Compile>
     <Compile Include="Indexer.cs" />
+    <Compile Include="Indexer1.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +108,7 @@
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Searcher.cs" />
+    <Compile Include="Searcher1.cs" />
     <EmbeddedResource Include="Favorites.resx">
       <DependentUpon>Favorites.cs</DependentUpon>
     </EmbeddedResource>

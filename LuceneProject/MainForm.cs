@@ -32,23 +32,41 @@ namespace LuceneProject
         public MainForm()
         {
             InitializeComponent();
-            using (Indexer indexer = new Indexer())
+            /* using (Indexer1 indexer = new Indexer1())
+             {
+               indexer.IndexDirectory = "Index";
+                indexer.DataDirectory = "Data";
+                  indexer.Setup();
+
+                  indexer.Index();
+
+
+             }
+             Searcher1 searcher = new Searcher1();
+
+             searcher.Search(indexer.IndexDirectory, "barcelona");
+
+             Console.WriteLine();
+             */
+          /*  string indexDir = @"C:\Users\Stratos\source\repos\SotirisTsepelakis\LuceneProject\LuceneProject\bin\Debug\Index";
+            using (Indexer1 indexer = new Indexer1())
             {
-                /* indexer.IndexDirectory = "Index";
-                 indexer.DataDirectory = "Data";
-                 indexer.Setup();
+                indexer.IndexDirectory = indexDir;
+                indexer.DataDirectory = @"C:\Users\Stratos\source\repos\SotirisTsepelakis\LuceneProject\LuceneProject\bin\Debug\Index\Data";
+                indexer.Setup();
 
-                 indexer.Index();
-
-            */
+                indexer.Index();
             }
-            Searcher searcher = new Searcher();
 
-            searcher.Search("people");
 
-            Console.WriteLine();
+
+            Searcher1 searcher = new Searcher1();
+
+
+            searcher.Search(indexDir,"barcelona");
+            */
         }
-
+        
         private void greekToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -161,7 +179,7 @@ namespace LuceneProject
             {
 
             }
-            System.IO.File.WriteAllLines(@"C:\Users\Stratos\Desktop\indexPath\IndexData\" + textBox1.Text + ".doc", richTextBox2.Lines);
+            System.IO.File.WriteAllLines(@"C:\Users\Stratos\source\repos\SotirisTsepelakis\LuceneProject\LuceneProject\bin\Debug\Index\Data\" + textBox1.Text + ".doc", richTextBox2.Lines);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -222,7 +240,22 @@ namespace LuceneProject
 
         private void keywordSearchbutton_Click(object sender, EventArgs e)
         {
+            string indexDir = @"C:\Users\Stratos\source\repos\SotirisTsepelakis\LuceneProject\LuceneProject\bin\Debug\Index";
+            using (Indexer1 indexer = new Indexer1())
+            {
+                indexer.IndexDirectory = indexDir;
+                indexer.DataDirectory = @"C:\Users\Stratos\source\repos\SotirisTsepelakis\LuceneProject\LuceneProject\bin\Debug\Index\Data";
+                indexer.Setup();
 
+                indexer.Index();
+            }
+
+
+
+            Searcher1 searcher = new Searcher1();
+
+
+            searcher.Search(indexDir, textBox2.Text);
         }
 
         private void printButton_Click(object sender, EventArgs e)
