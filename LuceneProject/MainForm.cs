@@ -169,7 +169,9 @@ namespace LuceneProject
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            string selectedNodeText = e.Node.Text;
+            string category = e.Node.Text;
+            dataGridView1.DataSource = lemmaCategoryTableAdapter.GetDataByCategory(category);
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
     }
 }
