@@ -16,6 +16,7 @@ namespace LuceneProject
     {
         private bool loggedIn = false;
         private string usernameToStore;
+        public static string u;
 
         public LoginForm()
         {

@@ -23,6 +23,7 @@ namespace LuceneProject
         LemmaMediaTableAdapter lemmaMediaTableAdapter = new LemmaMediaTableAdapter();
         LemmaTableAdapter lemmaTableAdapter = new LemmaTableAdapter();
         MediaTableAdapter mediaTableAdapter = new MediaTableAdapter();
+        private string uname;
 
         public MainForm()
         {
@@ -150,6 +151,8 @@ namespace LuceneProject
                 toolStripRegisterButton.Visible = false;
                 toolStripLabel2.Text = "Signed in as " + form.getUsernameToStore();
                 toolStripLabel2.Font= new Font("Arial", 8, FontStyle.Bold);
+
+                setUsername(form.getUsernameToStore());
             }
         }
 
@@ -157,6 +160,11 @@ namespace LuceneProject
         {
             RegisterForm form = new RegisterForm();
             form.ShowDialog();
+        }
+
+        void setUsername(string uname)
+        {
+            this.uname = uname;
         }
     }
 }
