@@ -191,14 +191,15 @@ namespace LuceneProject
 
         private void showFavoritesButton_Click(object sender, EventArgs e)
         {
-
+            Favorites f = new Favorites();
+            f.Show();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             OleDbConnection con = new OleDbConnection
             {
-                ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString1
+                ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString2
             };
             con.Open();
             OleDbCommand cmd = new OleDbCommand("SELECT COUNT(*) FROM Lemma", con);
