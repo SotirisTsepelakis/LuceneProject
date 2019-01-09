@@ -30,9 +30,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Religion");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Sports");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("World");
             this.basicMenuStrip = new System.Windows.Forms.MenuStrip();
             this.toolStripDropDownLanguageButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.greekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,6 +53,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.onThisDayRichTextBox = new System.Windows.Forms.RichTextBox();
             this.BaseSearch = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -66,7 +64,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.onThisDayRichTextBox = new System.Windows.Forms.RichTextBox();
             this.basicMenuStrip.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -182,7 +179,7 @@
             // PrintPdf
             // 
             this.PrintPdf.Location = new System.Drawing.Point(431, 105);
-            this.PrintPdf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PrintPdf.Margin = new System.Windows.Forms.Padding(4);
             this.PrintPdf.Name = "PrintPdf";
             this.PrintPdf.Size = new System.Drawing.Size(100, 28);
             this.PrintPdf.TabIndex = 23;
@@ -246,7 +243,7 @@
             "Universe",
             "World"});
             this.comboBox1.Location = new System.Drawing.Point(227, 382);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 20;
@@ -254,7 +251,7 @@
             // richTextBox2
             // 
             this.richTextBox2.Location = new System.Drawing.Point(101, 166);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(429, 182);
             this.richTextBox2.TabIndex = 19;
@@ -263,7 +260,7 @@
             // FavoriteButton
             // 
             this.FavoriteButton.Location = new System.Drawing.Point(101, 379);
-            this.FavoriteButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FavoriteButton.Margin = new System.Windows.Forms.Padding(4);
             this.FavoriteButton.Name = "FavoriteButton";
             this.FavoriteButton.Size = new System.Drawing.Size(100, 28);
             this.FavoriteButton.TabIndex = 18;
@@ -275,7 +272,7 @@
             // ExportButton
             // 
             this.ExportButton.Location = new System.Drawing.Point(227, 106);
-            this.ExportButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ExportButton.Margin = new System.Windows.Forms.Padding(4);
             this.ExportButton.Name = "ExportButton";
             this.ExportButton.Size = new System.Drawing.Size(100, 28);
             this.ExportButton.TabIndex = 17;
@@ -286,7 +283,7 @@
             // SaveButton
             // 
             this.SaveButton.Location = new System.Drawing.Point(101, 106);
-            this.SaveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(4);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(100, 28);
             this.SaveButton.TabIndex = 16;
@@ -297,7 +294,7 @@
             // SearchButton
             // 
             this.SearchButton.Location = new System.Drawing.Point(431, 48);
-            this.SearchButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SearchButton.Margin = new System.Windows.Forms.Padding(4);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(100, 28);
             this.SearchButton.TabIndex = 15;
@@ -308,7 +305,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(101, 50);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(225, 22);
             this.textBox1.TabIndex = 14;
@@ -381,6 +378,16 @@
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             // 
+            // onThisDayRichTextBox
+            // 
+            this.onThisDayRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.onThisDayRichTextBox.Location = new System.Drawing.Point(476, 29);
+            this.onThisDayRichTextBox.Name = "onThisDayRichTextBox";
+            this.onThisDayRichTextBox.ReadOnly = true;
+            this.onThisDayRichTextBox.Size = new System.Drawing.Size(467, 403);
+            this.onThisDayRichTextBox.TabIndex = 3;
+            this.onThisDayRichTextBox.Text = "";
+            // 
             // BaseSearch
             // 
             this.BaseSearch.Controls.Add(this.tabPage1);
@@ -403,9 +410,9 @@
             this.tabPage3.Controls.Add(this.titleSearchbutton);
             this.tabPage3.Controls.Add(this.textBox2);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage3.Size = new System.Drawing.Size(952, 439);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "BaseSearch";
@@ -415,27 +422,17 @@
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(619, 209);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(320, 185);
             this.dataGridView2.TabIndex = 11;
             // 
             // treeView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(0, 44);
-            this.treeView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.treeView1.Location = new System.Drawing.Point(0, 0);
+            this.treeView1.Margin = new System.Windows.Forms.Padding(4);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Religion";
-            treeNode1.Text = "Religion";
-            treeNode2.Name = "Sports";
-            treeNode2.Text = "Sports";
-            treeNode3.Name = "World";
-            treeNode3.Text = "World";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3});
-            this.treeView1.Size = new System.Drawing.Size(160, 118);
+            this.treeView1.Size = new System.Drawing.Size(210, 439);
             this.treeView1.TabIndex = 10;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -443,7 +440,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(249, 209);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(320, 185);
             this.dataGridView1.TabIndex = 9;
@@ -492,15 +489,6 @@
             this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
-            // 
-            // onThisDayRichTextBox
-            // 
-            this.onThisDayRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.onThisDayRichTextBox.Location = new System.Drawing.Point(476, 29);
-            this.onThisDayRichTextBox.Name = "onThisDayRichTextBox";
-            this.onThisDayRichTextBox.Size = new System.Drawing.Size(467, 403);
-            this.onThisDayRichTextBox.TabIndex = 3;
-            this.onThisDayRichTextBox.Text = "";
             // 
             // MainForm
             // 
