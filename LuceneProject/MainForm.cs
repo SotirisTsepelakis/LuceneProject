@@ -27,7 +27,7 @@ namespace LuceneProject
         MediaTableAdapter mediaTableAdapter = new MediaTableAdapter();
         private string uname;
         public static string staticUname;
-        private int lowerBound=1, upperBound;
+        private int lowerBound = 1, upperBound;
 
         public MainForm()
         {
@@ -47,22 +47,22 @@ namespace LuceneProject
 
              Console.WriteLine();
              */
-          /*  string indexDir = @"C:\Users\Stratos\source\repos\SotirisTsepelakis\LuceneProject\LuceneProject\bin\Debug\Index";
-            using (Indexer1 indexer = new Indexer1())
-            {
-                indexer.IndexDirectory = indexDir;
-                indexer.DataDirectory = @"C:\Users\Stratos\source\repos\SotirisTsepelakis\LuceneProject\LuceneProject\bin\Debug\Index\Data";
-                indexer.Setup();
+            /*  string indexDir = @"C:\Users\Stratos\source\repos\SotirisTsepelakis\LuceneProject\LuceneProject\bin\Debug\Index";
+              using (Indexer1 indexer = new Indexer1())
+              {
+                  indexer.IndexDirectory = indexDir;
+                  indexer.DataDirectory = @"C:\Users\Stratos\source\repos\SotirisTsepelakis\LuceneProject\LuceneProject\bin\Debug\Index\Data";
+                  indexer.Setup();
 
-                indexer.Index();
-            }
+                  indexer.Index();
+              }
 
-            Searcher1 searcher = new Searcher1();
+              Searcher1 searcher = new Searcher1();
 
-            searcher.Search(indexDir,"barcelona");
-            */
+              searcher.Search(indexDir,"barcelona");
+              */
         }
-        
+
         private void greekToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -133,11 +133,11 @@ namespace LuceneProject
             int TitleExist = (int)check_title.ExecuteScalar();
 
             if (TitleExist > 0)
-            {              
+            {
                 MessageBox.Show("Article already exists");
             }
             else
-            {   
+            {
                 lemmaTableAdapter.Insert(title);
                 lemmaCategoryTableAdapter.Insert(category, title);
                 mediaTableAdapter.Insert("doc", content);
@@ -162,7 +162,7 @@ namespace LuceneProject
                 title = page.Attributes["title"].InnerText;
 
             }
-            
+
             favotiteTableAdapter.Insert(title, staticUname);
         }
 
@@ -195,7 +195,7 @@ namespace LuceneProject
                 toolStripSignInButton.Visible = false;
                 toolStripRegisterButton.Visible = false;
                 toolStripLabel2.Text = "Signed in as " + form.getUsernameToStore();
-                toolStripLabel2.Font= new Font("Arial", 8, FontStyle.Bold);
+                toolStripLabel2.Font = new Font("Arial", 8, FontStyle.Bold);
 
                 setUsername(form.getUsernameToStore());
                 staticUname = form.getUsernameToStore();
@@ -253,7 +253,7 @@ namespace LuceneProject
 
         private void printButton_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text=="")
+            if (textBox1.Text == "")
             {
                 MessageBox.Show("Search something first to print it!!");
                 return;
@@ -338,12 +338,12 @@ namespace LuceneProject
             }
 
             Random r = new Random();
-            int rInt = r.Next(lowerBound, upperBound+1);
+            int rInt = r.Next(lowerBound, upperBound + 1);
             Console.Write(rInt);
- 
+
             con.Open();
             OleDbCommand cmd2 = new OleDbCommand("SELECT content FROM Media WHERE ID=?", con);
-            cmd2.Parameters.AddWithValue("ID",rInt);
+            cmd2.Parameters.AddWithValue("ID", rInt);
 
             try
             {
@@ -368,6 +368,32 @@ namespace LuceneProject
                 "\n1917 – First World War: Troops of the British Empire defeated Ottoman forces at the Battle of Rafa on the Sinai–Palestine border in present - day Rafah." +
                 "\n1981 – U.S.Representative Raymond Lederer(pictured) was convicted of bribery and conspiracy for his role in the Abscam scandal, but continued to serve his term for three more months." +
                 "\n1992 – Radio astronomers Aleksander Wolszczan and Dale Frail announced the discovery of two planets orbiting the pulsar PSR B1257 + 12, the first definitive detection of exoplanets.";
+
+
+            DataTable dt = new DataTable();
+            OleDbCommand cmd3 = new OleDbCommand("SELECT * FROM Category", con);
+            con.Open();
+
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd3);
+            da.Fill(dt);
+
+            try
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    TreeNode node = new TreeNode();
+                    node.Text = (string)row["categoryName"];
+                    treeView1.Nodes.Add(node);
+                }
+            }
+            catch (OleDbException exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
     }
 }
