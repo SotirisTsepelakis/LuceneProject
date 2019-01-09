@@ -121,6 +121,22 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="toolStripDropDownLanguageButto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAJcAAABkCAYAAACLmaLOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJISURBVHhe7d0xalRBAMbxuYA38ByeQLFJZWNnY+UVJI3k
+        FpYWsogQUawkjVYqSWGhnQhBMGWwsRszayqZYtf3vn06/j74ddkXwv4hsPN2t1y5c1jnVm49qc/entZN
+        9+LN5/Vjetfi3yUuYsRFjLiIERcx4iJGXMSIixhxESMuYoaP6+q9lyxk6Liu3T+q7z9+q59Oz1nA0HHd
+        3D+qZ+c/Ln+L7XristjEZbGJy2ITl8UmLotNXBabuCw2cVlspT2ps7vxePu4Lh7Tvdaf2lutX6EX13Ir
+        vZft57DNk9p+tneNqV4df63XD16vI2P3yuXzO+S+nH3/dYB6+2n33yZZ/0VcvT+cPHERIy5ixEWMuIgR
+        FzHiIkZcxAwfV7n7vH88RN7+w3c1ob3rZtO1n+1dY6oHj07WR0Dt+uxeaUcjs9tbbX9wffGY7rUmcFfE
+        snPLjcUmLotNXBabuCw2cVls4rLYxGWxictiE5fFNnRc7dC6HQEdrD6wgKHjanrHQuxI7wmZ6m+Ki+WI
+        ixhxESMuYsRFjLiIERcx4iJm6HvoWVjvZfup2pFL+/C1TdfeKeKYZjxDv2/Rlp24LDZxWWzistjEZbGJ
+        y2ITl8UmLotNXBabuCy28vsHdsFcMt9aBk3vVgmYg7iIERcx4iJGXMSIixhxESMuYsRFTOl9ZT/MwcG1
+        xSYui01cFpu4LDZxWWzistjEZbGJy2ITl8UmLouttA9pg4TSvnwJEtwVQYy4iBEXMeIiRlzEiIsYcREj
+        LmLERYy4CDmsPwEBOkV9X2Z1agAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="englishToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJcAAABLCAMAAABKveUfAAAABGdBTUEAALGPC/xhBQAAAKtQTFRFzxQr
@@ -152,22 +168,6 @@
         zyFkzsY3rJ/t5EpgFMVftni58dTrmQh2GN9KJeCM5Epi5SpdwOefWf9FCCPlbKlyJTCK4kbh6qfWy1HC
         VDrDXLRfCVc/tb5Qu+xUP2MfTK70Gw8j9XIBuB6TIPsZRMw6HParn1y/6uP6VQLvZ/AiXFlNHNT+0npf
         SjL9H8am45B9jKrTAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="toolStripDropDownLanguageButto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAJcAAABkCAYAAACLmaLOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJISURBVHhe7d0xalRBAMbxuYA38ByeQLFJZWNnY+UVJI3k
-        FpYWsogQUawkjVYqSWGhnQhBMGWwsRszayqZYtf3vn06/j74ddkXwv4hsPN2t1y5c1jnVm49qc/entZN
-        9+LN5/Vjetfi3yUuYsRFjLiIERcx4iJGXMSIixhxESMuYoaP6+q9lyxk6Liu3T+q7z9+q59Oz1nA0HHd
-        3D+qZ+c/Ln+L7XristjEZbGJy2ITl8UmLotNXBabuCw2cVlspT2ps7vxePu4Lh7Tvdaf2lutX6EX13Ir
-        vZft57DNk9p+tneNqV4df63XD16vI2P3yuXzO+S+nH3/dYB6+2n33yZZ/0VcvT+cPHERIy5ixEWMuIgR
-        FzHiIkZcxAwfV7n7vH88RN7+w3c1ob3rZtO1n+1dY6oHj07WR0Dt+uxeaUcjs9tbbX9wffGY7rUmcFfE
-        snPLjcUmLotNXBabuCw2cVls4rLYxGWxictiE5fFNnRc7dC6HQEdrD6wgKHjanrHQuxI7wmZ6m+Ki+WI
-        ixhxESMuYsRFjLiIERcx4iJm6HvoWVjvZfup2pFL+/C1TdfeKeKYZjxDv2/Rlp24LDZxWWzistjEZbGJ
-        y2ITl8UmLotNXBabuCy28vsHdsFcMt9aBk3vVgmYg7iIERcx4iJGXMSIixhxESMuYsRFTOl9ZT/MwcG1
-        xSYui01cFpu4LDZxWWzistjEZbGJy2ITl8UmLouttA9pg4TSvnwJEtwVQYy4iBEXMeIiRlzEiIsYcREj
-        LmLERYy4CDmsPwEBOkV9X2Z1agAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="toolStripRegisterButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -336,22 +336,13 @@
         A//Z
 </value>
   </data>
-  <metadata name="cyclopediaBaseDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>232, 51</value>
-  </metadata>
   <metadata name="cyclopediaBaseDataSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>446, 51</value>
   </metadata>
   <metadata name="articlesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>758, 51</value>
   </metadata>
-  <metadata name="articlesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>961, 51</value>
-  </metadata>
   <metadata name="favoritesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1157, 51</value>
-  </metadata>
-  <metadata name="favoritesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1370, 51</value>
   </metadata>
 </root>

@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Xml;
-using System.Web;
 using System.IO;
 using System.Text.RegularExpressions;
 using LuceneProject.DatabaseDataSetTableAdapters;
@@ -27,7 +21,7 @@ namespace LuceneProject
         MediaTableAdapter mediaTableAdapter = new MediaTableAdapter();
         private string uname;
         public static string staticUname;
-        private int lowerBound = 1, upperBound;
+        private int lowerBound = 1, upperBound, rInt;
 
         public MainForm()
         {
@@ -39,7 +33,6 @@ namespace LuceneProject
                   indexer.Setup();
 
                   indexer.Index();
-
              }
              Searcher1 searcher = new Searcher1();
 
@@ -66,7 +59,7 @@ namespace LuceneProject
         private void greekToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormInGreek form = new FormInGreek();
+            FormInGreek form = new FormInGreek(rInt);
             form.ShowDialog();
             this.Close();
         }
@@ -117,7 +110,6 @@ namespace LuceneProject
             foreach (XmlNode page in pagelist)
             {
                 title = page.Attributes["title"].InnerText;
-
             }
 
             string category = comboBox1.Text;
@@ -316,7 +308,6 @@ namespace LuceneProject
 
             if (printPreviewDialog1.ShowDialog() == DialogResult.OK)
             {
-
                 printDocument1.Print();
             }
         }
@@ -328,6 +319,8 @@ namespace LuceneProject
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            comboBox1.SelectedIndex = 0;
+
             OleDbConnection con = new OleDbConnection
             {
                 ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString1
@@ -349,7 +342,7 @@ namespace LuceneProject
             }
 
             Random r = new Random();
-            int rInt = r.Next(lowerBound, upperBound + 1);
+            rInt = r.Next(lowerBound, upperBound + 1);
             Console.Write(rInt);
 
             con.Open();

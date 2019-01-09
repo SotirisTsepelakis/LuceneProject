@@ -112,6 +112,7 @@
             this.toolStripRegisterButton.Name = "toolStripRegisterButton";
             this.toolStripRegisterButton.Size = new System.Drawing.Size(188, 33);
             this.toolStripRegisterButton.Text = "Δημιουργία Λογαριασμού";
+            this.toolStripRegisterButton.Click += new System.EventHandler(this.toolStripRegisterButton_Click);
             // 
             // toolStripLabel2
             // 
@@ -130,6 +131,7 @@
             this.toolStripSignInButton.Name = "toolStripSignInButton";
             this.toolStripSignInButton.Size = new System.Drawing.Size(68, 33);
             this.toolStripSignInButton.Text = "Είσοδος";
+            this.toolStripSignInButton.Click += new System.EventHandler(this.toolStripSignInButton_Click);
             // 
             // toolStripLogoLabel
             // 
@@ -210,6 +212,7 @@
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox1.Location = new System.Drawing.Point(3, 28);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(467, 401);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
@@ -301,14 +304,10 @@
             this.textBox1.Size = new System.Drawing.Size(225, 22);
             this.textBox1.TabIndex = 21;
             // 
-            // cyclopediaBaseDataSetBindingSource
-            //
-            this.cyclopediaBaseDataSetBindingSource.Position = 0;
-            // 
             // articlesBindingSource
             // 
             this.articlesBindingSource.DataMember = "Articles";
-            //
+            // 
             // FormInGreek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -317,7 +316,9 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.basicMenuStrip);
             this.Name = "FormInGreek";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cyclopedia";
+            this.Load += new System.EventHandler(this.FormInGreek_Load);
             this.basicMenuStrip.ResumeLayout(false);
             this.basicMenuStrip.PerformLayout();
             this.tabControl1.ResumeLayout(false);

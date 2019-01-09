@@ -52,8 +52,8 @@
             this.articleTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.onThisDayRichTextBox = new System.Windows.Forms.RichTextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.articleLabel = new System.Windows.Forms.Label();
+            this.onThisDayLabel = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
             this.dayLabel = new System.Windows.Forms.Label();
             this.BaseSearch = new System.Windows.Forms.TabControl();
@@ -331,8 +331,8 @@
             this.articleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.articleTableLayoutPanel.Controls.Add(this.onThisDayRichTextBox, 1, 2);
             this.articleTableLayoutPanel.Controls.Add(this.richTextBox1, 0, 2);
-            this.articleTableLayoutPanel.Controls.Add(this.label1, 0, 0);
-            this.articleTableLayoutPanel.Controls.Add(this.label2, 1, 0);
+            this.articleTableLayoutPanel.Controls.Add(this.articleLabel, 0, 0);
+            this.articleTableLayoutPanel.Controls.Add(this.onThisDayLabel, 1, 0);
             this.articleTableLayoutPanel.Controls.Add(this.titleLabel, 0, 1);
             this.articleTableLayoutPanel.Controls.Add(this.dayLabel, 1, 1);
             this.articleTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -368,31 +368,31 @@
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "";
             // 
-            // label1
+            // articleLabel
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label1.Location = new System.Drawing.Point(3, 2);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(467, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Today\'s Suggested Article";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.articleLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.articleLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.articleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.articleLabel.Location = new System.Drawing.Point(3, 2);
+            this.articleLabel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
+            this.articleLabel.Name = "articleLabel";
+            this.articleLabel.Size = new System.Drawing.Size(467, 21);
+            this.articleLabel.TabIndex = 0;
+            this.articleLabel.Text = "Today\'s Suggested Article";
+            this.articleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // onThisDayLabel
             // 
-            this.label2.BackColor = System.Drawing.Color.PeachPuff;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label2.Location = new System.Drawing.Point(476, 2);
-            this.label2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(467, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "On this day";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.onThisDayLabel.BackColor = System.Drawing.Color.PeachPuff;
+            this.onThisDayLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.onThisDayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.onThisDayLabel.Location = new System.Drawing.Point(476, 2);
+            this.onThisDayLabel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
+            this.onThisDayLabel.Name = "onThisDayLabel";
+            this.onThisDayLabel.Size = new System.Drawing.Size(467, 21);
+            this.onThisDayLabel.TabIndex = 1;
+            this.onThisDayLabel.Text = "On this day";
+            this.onThisDayLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // titleLabel
             // 
@@ -566,8 +566,8 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TableLayoutPanel articleTableLayoutPanel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label articleLabel;
+        private System.Windows.Forms.Label onThisDayLabel;
         private System.Windows.Forms.TabControl BaseSearch;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.RichTextBox richTextBox2;
