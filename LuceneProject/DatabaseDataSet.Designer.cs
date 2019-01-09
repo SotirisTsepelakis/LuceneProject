@@ -3372,7 +3372,7 @@ namespace LuceneProject.DatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString1;
+            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3694,7 +3694,7 @@ namespace LuceneProject.DatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString1;
+            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4068,7 +4068,7 @@ namespace LuceneProject.DatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString1;
+            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4465,7 +4465,7 @@ namespace LuceneProject.DatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString1;
+            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4844,7 +4844,7 @@ namespace LuceneProject.DatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString1;
+            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4856,7 +4856,7 @@ namespace LuceneProject.DatabaseDataSetTableAdapters {
             this._commandCollection[0].CommandText = "SELECT MediaID, LemmaTitle FROM LemmaMedia";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
-            this._commandCollection[1].Connection = new global::System.Data.OleDb.OleDbConnection(global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString2);
+            this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT lm.MediaID, lm.LemmaTitle, m.type, m.content\r\nFROM     ((LemmaMedia lm INN" +
                 "ER JOIN\r\n                  Lemma l ON lm.LemmaTitle = l.title) INNER JOIN\r\n     " +
                 "             Media m ON lm.MediaID = m.ID)";
@@ -5200,7 +5200,7 @@ namespace LuceneProject.DatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString1;
+            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5625,7 +5625,7 @@ namespace LuceneProject.DatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString1;
+            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
