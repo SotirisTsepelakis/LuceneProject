@@ -3372,7 +3372,7 @@ namespace LuceneProject.DatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString2;
+            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3694,7 +3694,7 @@ namespace LuceneProject.DatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString2;
+            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4068,7 +4068,7 @@ namespace LuceneProject.DatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString2;
+            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4465,7 +4465,7 @@ namespace LuceneProject.DatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString2;
+            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5200,7 +5200,7 @@ namespace LuceneProject.DatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString2;
+            this._connection.ConnectionString = global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5606,7 +5606,7 @@ namespace LuceneProject.DatabaseDataSetTableAdapters {
             this._commandCollection[0].CommandText = "SELECT Username, [Password], Email FROM Users";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
-            this._commandCollection[1].Connection = new global::System.Data.OleDb.OleDbConnection(global::LuceneProject.Properties.Settings.Default.CyclopediaBaseConnectionString2);
+            this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT        Username\r\nFROM            Users\r\nWHERE        (Username = ?)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Username", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Username", global::System.Data.DataRowVersion.Current, false, null));

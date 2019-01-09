@@ -10,7 +10,7 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CategoryTableAdapter" GeneratorDataComponentClassName="CategoryTableAdapter" Name="Category" UserDataComponentName="CategoryTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="CyclopediaBaseConnectionString2 (Settings)" DbObjectName="Category" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="CyclopediaBaseConnectionString1 (Settings)" DbObjectName="Category" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Category` WHERE ((`CategoryName` = ?))</CommandText>
@@ -51,7 +51,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FavotiteTableAdapter" GeneratorDataComponentClassName="FavotiteTableAdapter" Name="Favotite" UserDataComponentName="FavotiteTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="CyclopediaBaseConnectionString2 (Settings)" DbObjectName="Favotite" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="CyclopediaBaseConnectionString1 (Settings)" DbObjectName="Favotite" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Favotite` WHERE ((`ID` = ?) AND ((? = 1 AND `LemmaTitle` IS NULL) OR (`LemmaTitle` = ?)) AND ((? = 1 AND `Username` IS NULL) OR (`Username` = ?)))</CommandText>
@@ -102,7 +102,7 @@ FROM     Favotite</CommandText>
               <Mapping SourceColumn="Username" DataSetColumn="Username" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="CyclopediaBaseConnectionString2 (Settings)" DbObjectName="Favotite" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByUsername" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByUsername" GeneratorSourceName="FillByUsername" GetMethodModifier="Public" GetMethodName="GetDataByUsername" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByUsername" UserSourceName="FillByUsername">
+              <DbSource ConnectionRef="CyclopediaBaseConnectionString1 (Settings)" DbObjectName="Favotite" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByUsername" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByUsername" GeneratorSourceName="FillByUsername" GetMethodModifier="Public" GetMethodName="GetDataByUsername" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByUsername" UserSourceName="FillByUsername">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT ID, LemmaTitle, Username
@@ -118,7 +118,7 @@ where Username = ?</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LemmaTableAdapter" GeneratorDataComponentClassName="LemmaTableAdapter" Name="Lemma" UserDataComponentName="LemmaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="CyclopediaBaseConnectionString2 (Settings)" DbObjectName="Lemma" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="CyclopediaBaseConnectionString1 (Settings)" DbObjectName="Lemma" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Lemma` WHERE ((`title` = ?))</CommandText>
@@ -156,7 +156,7 @@ where Username = ?</CommandText>
               <Mapping SourceColumn="title" DataSetColumn="title" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="CyclopediaBaseConnectionString2 (Settings)" DbObjectName="Lemma" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByTitle" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataByTitle" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByTitle" UserSourceName="FillBy">
+              <DbSource ConnectionRef="CyclopediaBaseConnectionString1 (Settings)" DbObjectName="Lemma" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByTitle" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataByTitle" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByTitle" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT title FROM Lemma
@@ -167,7 +167,7 @@ where title=?</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="CyclopediaBaseConnectionString2 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByTitleAndContent" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataByTitleAndContent" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByTitleAndContent" UserSourceName="FillBy1">
+              <DbSource ConnectionRef="CyclopediaBaseConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByTitleAndContent" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataByTitleAndContent" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByTitleAndContent" UserSourceName="FillBy1">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        l.title, m.content
@@ -185,7 +185,7 @@ WHERE        (l.title = ?)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LemmaCategoryTableAdapter" GeneratorDataComponentClassName="LemmaCategoryTableAdapter" Name="LemmaCategory" UserDataComponentName="LemmaCategoryTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="CyclopediaBaseConnectionString2 (Settings)" DbObjectName="LemmaCategory" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="CyclopediaBaseConnectionString1 (Settings)" DbObjectName="LemmaCategory" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `LemmaCategory` WHERE ((`CategoryName` = ?) AND (`LemmaTitle` = ?))</CommandText>
@@ -228,7 +228,7 @@ WHERE        (l.title = ?)</CommandText>
               <Mapping SourceColumn="LemmaTitle" DataSetColumn="LemmaTitle" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="CyclopediaBaseConnectionString2 (Settings)" DbObjectName="LemmaCategory" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByCategory" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataByCategory" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByCategory" UserSourceName="FillBy">
+              <DbSource ConnectionRef="CyclopediaBaseConnectionString1 (Settings)" DbObjectName="LemmaCategory" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByCategory" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataByCategory" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByCategory" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        LemmaTitle, CategoryName
@@ -287,7 +287,7 @@ WHERE        (CategoryName = ?)</CommandText>
               <Mapping SourceColumn="LemmaTitle" DataSetColumn="LemmaTitle" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="CyclopediaBaseConnectionString2 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetAllDataFromLemmaAndMedia" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetAllDataFromLemmaAndMedia" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetAllDataFromLemmaAndMedia" UserSourceName="FillBy">
+              <DbSource ConnectionRef="CyclopediaBaseConnectionString2 (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetAllDataFromLemmaAndMedia" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetAllDataFromLemmaAndMedia" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetAllDataFromLemmaAndMedia" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT lm.MediaID, lm.LemmaTitle, m.type, m.content
@@ -302,7 +302,7 @@ FROM     ((LemmaMedia lm INNER JOIN
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MediaTableAdapter" GeneratorDataComponentClassName="MediaTableAdapter" Name="Media" UserDataComponentName="MediaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="CyclopediaBaseConnectionString2 (Settings)" DbObjectName="Media" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="CyclopediaBaseConnectionString1 (Settings)" DbObjectName="Media" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Media` WHERE ((`ID` = ?) AND ((? = 1 AND `type` IS NULL) OR (`type` = ?)) AND ((? = 1 AND `content` IS NULL) OR (`content` = ?)))</CommandText>
@@ -352,7 +352,7 @@ FROM     ((LemmaMedia lm INNER JOIN
               <Mapping SourceColumn="content" DataSetColumn="content" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="CyclopediaBaseConnectionString2 (Settings)" DbObjectName="Media" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByTitle" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByTitle" GeneratorSourceName="FillByTitle" GetMethodModifier="Public" GetMethodName="GetDataByTitle" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByTitle" UserSourceName="FillByTitle">
+              <DbSource ConnectionRef="CyclopediaBaseConnectionString1 (Settings)" DbObjectName="Media" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByTitle" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByTitle" GeneratorSourceName="FillByTitle" GetMethodModifier="Public" GetMethodName="GetDataByTitle" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByTitle" UserSourceName="FillByTitle">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        m.content
@@ -423,7 +423,7 @@ WHERE        (l.title = ?)</CommandText>
               <Mapping SourceColumn="Email" DataSetColumn="Email" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="CyclopediaBaseConnectionString2 (Settings)" DbObjectName="Users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByUsername" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByUsername" GeneratorSourceName="FillByUsername" GetMethodModifier="Public" GetMethodName="GetDataByUsername" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByUsername" UserSourceName="FillByUsername">
+              <DbSource ConnectionRef="CyclopediaBaseConnectionString1 (Settings)" DbObjectName="Users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByUsername" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByUsername" GeneratorSourceName="FillByUsername" GetMethodModifier="Public" GetMethodName="GetDataByUsername" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByUsername" UserSourceName="FillByUsername">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Username
@@ -445,7 +445,7 @@ WHERE        (Username = ?)</CommandText>
   <xs:element name="DatabaseDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DatabaseDataSet" msprop:Generator_UserDSName="DatabaseDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Category" msprop:Generator_TableClassName="CategoryDataTable" msprop:Generator_TableVarName="tableCategory" msprop:Generator_RowChangedName="CategoryRowChanged" msprop:Generator_TablePropName="Category" msprop:Generator_RowDeletingName="CategoryRowDeleting" msprop:Generator_RowChangingName="CategoryRowChanging" msprop:Generator_RowEvHandlerName="CategoryRowChangeEventHandler" msprop:Generator_RowDeletedName="CategoryRowDeleted" msprop:Generator_RowClassName="CategoryRow" msprop:Generator_UserTableName="Category" msprop:Generator_RowEvArgName="CategoryRowChangeEvent">
+        <xs:element name="Category" msprop:Generator_TableClassName="CategoryDataTable" msprop:Generator_TableVarName="tableCategory" msprop:Generator_TablePropName="Category" msprop:Generator_RowDeletingName="CategoryRowDeleting" msprop:Generator_RowChangingName="CategoryRowChanging" msprop:Generator_RowEvHandlerName="CategoryRowChangeEventHandler" msprop:Generator_RowDeletedName="CategoryRowDeleted" msprop:Generator_UserTableName="Category" msprop:Generator_RowChangedName="CategoryRowChanged" msprop:Generator_RowEvArgName="CategoryRowChangeEvent" msprop:Generator_RowClassName="CategoryRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CategoryName" msprop:Generator_ColumnVarNameInTable="columnCategoryName" msprop:Generator_ColumnPropNameInRow="CategoryName" msprop:Generator_ColumnPropNameInTable="CategoryNameColumn" msprop:Generator_UserColumnName="CategoryName">
@@ -458,7 +458,7 @@ WHERE        (Username = ?)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Favotite" msprop:Generator_TableClassName="FavotiteDataTable" msprop:Generator_TableVarName="tableFavotite" msprop:Generator_RowChangedName="FavotiteRowChanged" msprop:Generator_TablePropName="Favotite" msprop:Generator_RowDeletingName="FavotiteRowDeleting" msprop:Generator_RowChangingName="FavotiteRowChanging" msprop:Generator_RowEvHandlerName="FavotiteRowChangeEventHandler" msprop:Generator_RowDeletedName="FavotiteRowDeleted" msprop:Generator_RowClassName="FavotiteRow" msprop:Generator_UserTableName="Favotite" msprop:Generator_RowEvArgName="FavotiteRowChangeEvent">
+        <xs:element name="Favotite" msprop:Generator_TableClassName="FavotiteDataTable" msprop:Generator_TableVarName="tableFavotite" msprop:Generator_TablePropName="Favotite" msprop:Generator_RowDeletingName="FavotiteRowDeleting" msprop:Generator_RowChangingName="FavotiteRowChanging" msprop:Generator_RowEvHandlerName="FavotiteRowChangeEventHandler" msprop:Generator_RowDeletedName="FavotiteRowDeleted" msprop:Generator_UserTableName="Favotite" msprop:Generator_RowChangedName="FavotiteRowChanged" msprop:Generator_RowEvArgName="FavotiteRowChangeEvent" msprop:Generator_RowClassName="FavotiteRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -473,7 +473,7 @@ WHERE        (Username = ?)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Lemma" msprop:Generator_TableClassName="LemmaDataTable" msprop:Generator_TableVarName="tableLemma" msprop:Generator_RowChangedName="LemmaRowChanged" msprop:Generator_TablePropName="Lemma" msprop:Generator_RowDeletingName="LemmaRowDeleting" msprop:Generator_RowChangingName="LemmaRowChanging" msprop:Generator_RowEvHandlerName="LemmaRowChangeEventHandler" msprop:Generator_RowDeletedName="LemmaRowDeleted" msprop:Generator_RowClassName="LemmaRow" msprop:Generator_UserTableName="Lemma" msprop:Generator_RowEvArgName="LemmaRowChangeEvent">
+        <xs:element name="Lemma" msprop:Generator_TableClassName="LemmaDataTable" msprop:Generator_TableVarName="tableLemma" msprop:Generator_TablePropName="Lemma" msprop:Generator_RowDeletingName="LemmaRowDeleting" msprop:Generator_RowChangingName="LemmaRowChanging" msprop:Generator_RowEvHandlerName="LemmaRowChangeEventHandler" msprop:Generator_RowDeletedName="LemmaRowDeleted" msprop:Generator_UserTableName="Lemma" msprop:Generator_RowChangedName="LemmaRowChanged" msprop:Generator_RowEvArgName="LemmaRowChangeEvent" msprop:Generator_RowClassName="LemmaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="title" msprop:Generator_ColumnVarNameInTable="columntitle" msprop:Generator_ColumnPropNameInRow="title" msprop:Generator_ColumnPropNameInTable="titleColumn" msprop:Generator_UserColumnName="title">
@@ -486,7 +486,7 @@ WHERE        (Username = ?)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="LemmaCategory" msprop:Generator_TableClassName="LemmaCategoryDataTable" msprop:Generator_TableVarName="tableLemmaCategory" msprop:Generator_RowChangedName="LemmaCategoryRowChanged" msprop:Generator_TablePropName="LemmaCategory" msprop:Generator_RowDeletingName="LemmaCategoryRowDeleting" msprop:Generator_RowChangingName="LemmaCategoryRowChanging" msprop:Generator_RowEvHandlerName="LemmaCategoryRowChangeEventHandler" msprop:Generator_RowDeletedName="LemmaCategoryRowDeleted" msprop:Generator_RowClassName="LemmaCategoryRow" msprop:Generator_UserTableName="LemmaCategory" msprop:Generator_RowEvArgName="LemmaCategoryRowChangeEvent">
+        <xs:element name="LemmaCategory" msprop:Generator_TableClassName="LemmaCategoryDataTable" msprop:Generator_TableVarName="tableLemmaCategory" msprop:Generator_TablePropName="LemmaCategory" msprop:Generator_RowDeletingName="LemmaCategoryRowDeleting" msprop:Generator_RowChangingName="LemmaCategoryRowChanging" msprop:Generator_RowEvHandlerName="LemmaCategoryRowChangeEventHandler" msprop:Generator_RowDeletedName="LemmaCategoryRowDeleted" msprop:Generator_UserTableName="LemmaCategory" msprop:Generator_RowChangedName="LemmaCategoryRowChanged" msprop:Generator_RowEvArgName="LemmaCategoryRowChangeEvent" msprop:Generator_RowClassName="LemmaCategoryRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CategoryName" msprop:Generator_ColumnVarNameInTable="columnCategoryName" msprop:Generator_ColumnPropNameInRow="CategoryName" msprop:Generator_ColumnPropNameInTable="CategoryNameColumn" msprop:Generator_UserColumnName="CategoryName">
@@ -506,7 +506,7 @@ WHERE        (Username = ?)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="LemmaMedia" msprop:Generator_TableClassName="LemmaMediaDataTable" msprop:Generator_TableVarName="tableLemmaMedia" msprop:Generator_RowChangedName="LemmaMediaRowChanged" msprop:Generator_TablePropName="LemmaMedia" msprop:Generator_RowDeletingName="LemmaMediaRowDeleting" msprop:Generator_RowChangingName="LemmaMediaRowChanging" msprop:Generator_RowEvHandlerName="LemmaMediaRowChangeEventHandler" msprop:Generator_RowDeletedName="LemmaMediaRowDeleted" msprop:Generator_RowClassName="LemmaMediaRow" msprop:Generator_UserTableName="LemmaMedia" msprop:Generator_RowEvArgName="LemmaMediaRowChangeEvent">
+        <xs:element name="LemmaMedia" msprop:Generator_TableClassName="LemmaMediaDataTable" msprop:Generator_TableVarName="tableLemmaMedia" msprop:Generator_TablePropName="LemmaMedia" msprop:Generator_RowDeletingName="LemmaMediaRowDeleting" msprop:Generator_RowChangingName="LemmaMediaRowChanging" msprop:Generator_RowEvHandlerName="LemmaMediaRowChangeEventHandler" msprop:Generator_RowDeletedName="LemmaMediaRowDeleted" msprop:Generator_UserTableName="LemmaMedia" msprop:Generator_RowChangedName="LemmaMediaRowChanged" msprop:Generator_RowEvArgName="LemmaMediaRowChangeEvent" msprop:Generator_RowClassName="LemmaMediaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MediaID" msprop:Generator_ColumnVarNameInTable="columnMediaID" msprop:Generator_ColumnPropNameInRow="MediaID" msprop:Generator_ColumnPropNameInTable="MediaIDColumn" msprop:Generator_UserColumnName="MediaID" type="xs:int" />
@@ -520,7 +520,7 @@ WHERE        (Username = ?)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Media" msprop:Generator_TableClassName="MediaDataTable" msprop:Generator_TableVarName="tableMedia" msprop:Generator_RowChangedName="MediaRowChanged" msprop:Generator_TablePropName="Media" msprop:Generator_RowDeletingName="MediaRowDeleting" msprop:Generator_RowChangingName="MediaRowChanging" msprop:Generator_RowEvHandlerName="MediaRowChangeEventHandler" msprop:Generator_RowDeletedName="MediaRowDeleted" msprop:Generator_RowClassName="MediaRow" msprop:Generator_UserTableName="Media" msprop:Generator_RowEvArgName="MediaRowChangeEvent">
+        <xs:element name="Media" msprop:Generator_TableClassName="MediaDataTable" msprop:Generator_TableVarName="tableMedia" msprop:Generator_TablePropName="Media" msprop:Generator_RowDeletingName="MediaRowDeleting" msprop:Generator_RowChangingName="MediaRowChanging" msprop:Generator_RowEvHandlerName="MediaRowChangeEventHandler" msprop:Generator_RowDeletedName="MediaRowDeleted" msprop:Generator_UserTableName="Media" msprop:Generator_RowChangedName="MediaRowChanged" msprop:Generator_RowEvArgName="MediaRowChangeEvent" msprop:Generator_RowClassName="MediaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -541,7 +541,7 @@ WHERE        (Username = ?)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Users" msprop:Generator_TableClassName="UsersDataTable" msprop:Generator_TableVarName="tableUsers" msprop:Generator_RowChangedName="UsersRowChanged" msprop:Generator_TablePropName="Users" msprop:Generator_RowDeletingName="UsersRowDeleting" msprop:Generator_RowChangingName="UsersRowChanging" msprop:Generator_RowEvHandlerName="UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersRowDeleted" msprop:Generator_RowClassName="UsersRow" msprop:Generator_UserTableName="Users" msprop:Generator_RowEvArgName="UsersRowChangeEvent">
+        <xs:element name="Users" msprop:Generator_TableClassName="UsersDataTable" msprop:Generator_TableVarName="tableUsers" msprop:Generator_TablePropName="Users" msprop:Generator_RowDeletingName="UsersRowDeleting" msprop:Generator_RowChangingName="UsersRowChanging" msprop:Generator_RowEvHandlerName="UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersRowDeleted" msprop:Generator_UserTableName="Users" msprop:Generator_RowChangedName="UsersRowChanged" msprop:Generator_RowEvArgName="UsersRowChangeEvent" msprop:Generator_RowClassName="UsersRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Username" msprop:Generator_ColumnVarNameInTable="columnUsername" msprop:Generator_ColumnPropNameInRow="Username" msprop:Generator_ColumnPropNameInTable="UsernameColumn" msprop:Generator_UserColumnName="Username">
@@ -603,12 +603,12 @@ WHERE        (Username = ?)</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="LemmaFavotite" msdata:parent="Lemma" msdata:child="Favotite" msdata:parentkey="title" msdata:childkey="LemmaTitle" msprop:Generator_UserChildTable="Favotite" msprop:Generator_ChildPropName="GetFavotiteRows" msprop:Generator_UserRelationName="LemmaFavotite" msprop:Generator_ParentPropName="LemmaRow" msprop:Generator_RelationVarName="relationLemmaFavotite" msprop:Generator_UserParentTable="Lemma" />
-      <msdata:Relationship name="CategoryLemmaCategory" msdata:parent="Category" msdata:child="LemmaCategory" msdata:parentkey="CategoryName" msdata:childkey="CategoryName" msprop:Generator_UserChildTable="LemmaCategory" msprop:Generator_ChildPropName="GetLemmaCategoryRows" msprop:Generator_UserRelationName="CategoryLemmaCategory" msprop:Generator_RelationVarName="relationCategoryLemmaCategory" msprop:Generator_UserParentTable="Category" msprop:Generator_ParentPropName="CategoryRow" />
-      <msdata:Relationship name="LemmaLemmaCategory" msdata:parent="Lemma" msdata:child="LemmaCategory" msdata:parentkey="title" msdata:childkey="LemmaTitle" msprop:Generator_UserChildTable="LemmaCategory" msprop:Generator_ChildPropName="GetLemmaCategoryRows" msprop:Generator_UserRelationName="LemmaLemmaCategory" msprop:Generator_RelationVarName="relationLemmaLemmaCategory" msprop:Generator_UserParentTable="Lemma" msprop:Generator_ParentPropName="LemmaRow" />
-      <msdata:Relationship name="LemmaLemmaMedia" msdata:parent="Lemma" msdata:child="LemmaMedia" msdata:parentkey="title" msdata:childkey="LemmaTitle" msprop:Generator_UserChildTable="LemmaMedia" msprop:Generator_ChildPropName="GetLemmaMediaRows" msprop:Generator_UserRelationName="LemmaLemmaMedia" msprop:Generator_RelationVarName="relationLemmaLemmaMedia" msprop:Generator_UserParentTable="Lemma" msprop:Generator_ParentPropName="LemmaRow" />
-      <msdata:Relationship name="MediaLemmaMedia" msdata:parent="Media" msdata:child="LemmaMedia" msdata:parentkey="ID" msdata:childkey="MediaID" msprop:Generator_UserChildTable="LemmaMedia" msprop:Generator_ChildPropName="GetLemmaMediaRows" msprop:Generator_UserRelationName="MediaLemmaMedia" msprop:Generator_ParentPropName="MediaRow" msprop:Generator_RelationVarName="relationMediaLemmaMedia" msprop:Generator_UserParentTable="Media" />
-      <msdata:Relationship name="Users_Favotite" msdata:parent="Users" msdata:child="Favotite" msdata:parentkey="Username" msdata:childkey="Username" msprop:Generator_UserChildTable="Favotite" msprop:Generator_ChildPropName="GetFavotiteRows" msprop:Generator_UserRelationName="Users_Favotite" msprop:Generator_ParentPropName="UsersRow" msprop:Generator_RelationVarName="relationUsers_Favotite" msprop:Generator_UserParentTable="Users" />
+      <msdata:Relationship name="LemmaFavotite" msdata:parent="Lemma" msdata:child="Favotite" msdata:parentkey="title" msdata:childkey="LemmaTitle" msprop:Generator_UserChildTable="Favotite" msprop:Generator_ChildPropName="GetFavotiteRows" msprop:Generator_UserRelationName="LemmaFavotite" msprop:Generator_RelationVarName="relationLemmaFavotite" msprop:Generator_UserParentTable="Lemma" msprop:Generator_ParentPropName="LemmaRow" />
+      <msdata:Relationship name="CategoryLemmaCategory" msdata:parent="Category" msdata:child="LemmaCategory" msdata:parentkey="CategoryName" msdata:childkey="CategoryName" msprop:Generator_UserChildTable="LemmaCategory" msprop:Generator_ChildPropName="GetLemmaCategoryRows" msprop:Generator_UserRelationName="CategoryLemmaCategory" msprop:Generator_ParentPropName="CategoryRow" msprop:Generator_RelationVarName="relationCategoryLemmaCategory" msprop:Generator_UserParentTable="Category" />
+      <msdata:Relationship name="LemmaLemmaCategory" msdata:parent="Lemma" msdata:child="LemmaCategory" msdata:parentkey="title" msdata:childkey="LemmaTitle" msprop:Generator_UserChildTable="LemmaCategory" msprop:Generator_ChildPropName="GetLemmaCategoryRows" msprop:Generator_UserRelationName="LemmaLemmaCategory" msprop:Generator_ParentPropName="LemmaRow" msprop:Generator_RelationVarName="relationLemmaLemmaCategory" msprop:Generator_UserParentTable="Lemma" />
+      <msdata:Relationship name="LemmaLemmaMedia" msdata:parent="Lemma" msdata:child="LemmaMedia" msdata:parentkey="title" msdata:childkey="LemmaTitle" msprop:Generator_UserChildTable="LemmaMedia" msprop:Generator_ChildPropName="GetLemmaMediaRows" msprop:Generator_UserRelationName="LemmaLemmaMedia" msprop:Generator_ParentPropName="LemmaRow" msprop:Generator_RelationVarName="relationLemmaLemmaMedia" msprop:Generator_UserParentTable="Lemma" />
+      <msdata:Relationship name="MediaLemmaMedia" msdata:parent="Media" msdata:child="LemmaMedia" msdata:parentkey="ID" msdata:childkey="MediaID" msprop:Generator_UserChildTable="LemmaMedia" msprop:Generator_ChildPropName="GetLemmaMediaRows" msprop:Generator_UserRelationName="MediaLemmaMedia" msprop:Generator_RelationVarName="relationMediaLemmaMedia" msprop:Generator_UserParentTable="Media" msprop:Generator_ParentPropName="MediaRow" />
+      <msdata:Relationship name="Users_Favotite" msdata:parent="Users" msdata:child="Favotite" msdata:parentkey="Username" msdata:childkey="Username" msprop:Generator_UserChildTable="Favotite" msprop:Generator_ChildPropName="GetFavotiteRows" msprop:Generator_UserRelationName="Users_Favotite" msprop:Generator_RelationVarName="relationUsers_Favotite" msprop:Generator_UserParentTable="Users" msprop:Generator_ParentPropName="UsersRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
