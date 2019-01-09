@@ -40,7 +40,6 @@ namespace LuceneProject
 
                   indexer.Index();
 
-
              }
              Searcher1 searcher = new Searcher1();
 
@@ -58,10 +57,7 @@ namespace LuceneProject
                 indexer.Index();
             }
 
-
-
             Searcher1 searcher = new Searcher1();
-
 
             searcher.Search(indexDir,"barcelona");
             */
@@ -129,7 +125,7 @@ namespace LuceneProject
 
             OleDbConnection con = new OleDbConnection
             {
-                ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString2
+                ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString1
             };
             con.Open();
             OleDbCommand check_title = new OleDbCommand("SELECT COUNT(*) FROM Lemma WHERE title ='" + textBox1.Text + "'", con);
@@ -148,7 +144,6 @@ namespace LuceneProject
 
                 lemmaMediaTableAdapter.Insert(1, title);
             }
-            con.Close();
         }
 
         private void FavoriteButton_Click(object sender, EventArgs e)
@@ -180,7 +175,7 @@ namespace LuceneProject
             {
 
             }
-            System.IO.File.WriteAllLines(@"C:\Users\Stratos\source\repos\SotirisTsepelakis\LuceneProject\LuceneProject\bin\Debug\Index\Data\" + textBox1.Text + ".doc", richTextBox2.Lines);
+            System.IO.File.WriteAllLines(@"C:\Users\Sotiris\Desktop\LuceneProject\LuceneProject\bin\Debug\Index\Data\" + textBox1.Text + ".doc", richTextBox2.Lines);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -242,26 +237,27 @@ namespace LuceneProject
 
         private void keywordSearchbutton_Click(object sender, EventArgs e)
         {
-            string indexDir = @"C:\Users\Stratos\source\repos\SotirisTsepelakis\LuceneProject\LuceneProject\bin\Debug\Index";
+            string indexDir = @"C:\Users\Sotiris\Desktop\LuceneProject\LuceneProject\bin\Debug\Index";
             using (Indexer1 indexer = new Indexer1())
             {
                 indexer.IndexDirectory = indexDir;
-                indexer.DataDirectory = @"C:\Users\Stratos\source\repos\SotirisTsepelakis\LuceneProject\LuceneProject\bin\Debug\Index\Data";
+                indexer.DataDirectory = @"C:\Users\Sotiris\Desktop\LuceneProject\LuceneProject\bin\Debug\Index\Data";
                 indexer.Setup();
 
                 indexer.Index();
             }
 
-
-
             Searcher1 searcher = new Searcher1();
-
-
             searcher.Search(indexDir, textBox2.Text);
         }
 
         private void printButton_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text=="")
+            {
+                MessageBox.Show("Search something first to print it!!");
+                return;
+            }
             PrintDialog printDialog = new PrintDialog();
             PrintDocument documentToPrint = new PrintDocument();
             printDialog.Document = documentToPrint;
@@ -298,6 +294,12 @@ namespace LuceneProject
 
         private void PrintPdf_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("Search something first to print it!!");
+                return;
+            }
+
             if (printPreviewDialog1.ShowDialog() == DialogResult.OK)
             {
 
@@ -314,7 +316,7 @@ namespace LuceneProject
         {
             OleDbConnection con = new OleDbConnection
             {
-                ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString2
+                ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString1
             };
             con.Open();
             OleDbCommand cmd = new OleDbCommand("SELECT COUNT(*) FROM Lemma", con);
@@ -335,19 +337,14 @@ namespace LuceneProject
             Random r = new Random();
             int rInt = r.Next(lowerBound, upperBound+1);
             Console.Write(rInt);
-
-           con.Open();
-            OleDbCommand cmd2 = new OleDbCommand("SELECT m.content FROM Media m JOIN LemmaMedia lm on m.id=lm.MediaID WHERE lm.MediaID='" + rInt + "'", con);
-           
-
+ 
+            con.Open();
+            OleDbCommand cmd2 = new OleDbCommand("SELECT content FROM Media WHERE ID=?", con);
+            cmd2.Parameters.AddWithValue("ID",rInt);
 
             try
             {
-               string content = (string)cmd2.ExecuteScalar();
-               
-                
-                
-
+                String content = (String)cmd2.ExecuteScalar();
                 richTextBox1.Text = content;
             }
             catch (OleDbException exc)
@@ -357,7 +354,17 @@ namespace LuceneProject
             finally
             {
                 con.Close();
-            }        
+            }
+
+            String date = DateTime.Now.ToString("dd.MM.yyy");
+
+            //future work to draw from an API
+            onThisDayRichTextBox.Text = date.ToString() + "\n" +
+                "\n475 – Basiliscus became Byzantine Emperor after Zeno was forced to flee Constantinople." +
+                "\n1857 – A 7.9 Mw earthquake ruptured part of the San Andreas Fault in California and was felt as far east as Las Vegas." +
+                "\n1917 – First World War: Troops of the British Empire defeated Ottoman forces at the Battle of Rafa on the Sinai–Palestine border in present - day Rafah." +
+                "\n1981 – U.S.Representative Raymond Lederer(pictured) was convicted of bribery and conspiracy for his role in the Abscam scandal, but continued to serve his term for three more months." +
+                "\n1992 – Radio astronomers Aleksander Wolszczan and Dale Frail announced the discovery of two planets orbiting the pulsar PSR B1257 + 12, the first definitive detection of exoplanets.";
         }
     }
 }
