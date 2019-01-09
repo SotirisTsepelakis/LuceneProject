@@ -148,6 +148,7 @@ namespace LuceneProject
 
                 lemmaMediaTableAdapter.Insert(1, title);
             }
+            con.Close();
         }
 
         private void FavoriteButton_Click(object sender, EventArgs e)
@@ -335,12 +336,18 @@ namespace LuceneProject
             int rInt = r.Next(lowerBound, upperBound+1);
             Console.Write(rInt);
 
-            con.Open();
-            OleDbCommand cmd2 = new OleDbCommand("SELECT content FROM Media WHERE ID='" + rInt + "'", con);
+           con.Open();
+            OleDbCommand cmd2 = new OleDbCommand("SELECT m.content FROM Media m JOIN LemmaMedia lm on m.id=lm.MediaID WHERE lm.MediaID='" + rInt + "'", con);
+           
+
 
             try
             {
-                string content = (string)cmd2.ExecuteScalar();
+               string content = (string)cmd2.ExecuteScalar();
+               
+                
+                
+
                 richTextBox1.Text = content;
             }
             catch (OleDbException exc)
