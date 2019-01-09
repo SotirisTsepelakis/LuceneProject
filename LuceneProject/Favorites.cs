@@ -26,8 +26,6 @@ namespace LuceneProject
 
         private void ShowFavs_Click(object sender, EventArgs e)
         {
-
-
           
             if (name1 == MainForm.staticUname)
             {
@@ -45,6 +43,5 @@ namespace LuceneProject
                 FavoriteGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             }
         }
-    
     }
 }

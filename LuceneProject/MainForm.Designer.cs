@@ -50,10 +50,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.articleTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.onThisDayRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.onThisDayRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.dayLabel = new System.Windows.Forms.Label();
             this.BaseSearch = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -327,20 +329,44 @@
             this.articleTableLayoutPanel.ColumnCount = 2;
             this.articleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.articleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.articleTableLayoutPanel.Controls.Add(this.onThisDayRichTextBox, 1, 2);
+            this.articleTableLayoutPanel.Controls.Add(this.richTextBox1, 0, 2);
             this.articleTableLayoutPanel.Controls.Add(this.label1, 0, 0);
             this.articleTableLayoutPanel.Controls.Add(this.label2, 1, 0);
-            this.articleTableLayoutPanel.Controls.Add(this.richTextBox1, 0, 1);
-            this.articleTableLayoutPanel.Controls.Add(this.onThisDayRichTextBox, 1, 1);
+            this.articleTableLayoutPanel.Controls.Add(this.titleLabel, 0, 1);
+            this.articleTableLayoutPanel.Controls.Add(this.dayLabel, 1, 1);
             this.articleTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.articleTableLayoutPanel.Location = new System.Drawing.Point(3, 2);
             this.articleTableLayoutPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.articleTableLayoutPanel.Name = "articleTableLayoutPanel";
-            this.articleTableLayoutPanel.RowCount = 2;
-            this.articleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.996915F));
-            this.articleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 94.00308F));
+            this.articleTableLayoutPanel.RowCount = 3;
+            this.articleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.476789F));
+            this.articleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.479607F));
+            this.articleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.04361F));
             this.articleTableLayoutPanel.Size = new System.Drawing.Size(946, 435);
             this.articleTableLayoutPanel.TabIndex = 0;
             this.articleTableLayoutPanel.CellPaint += new System.Windows.Forms.TableLayoutCellPaintEventHandler(this.articleTableLayoutPanel_CellPaint);
+            // 
+            // onThisDayRichTextBox
+            // 
+            this.onThisDayRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.onThisDayRichTextBox.Location = new System.Drawing.Point(476, 49);
+            this.onThisDayRichTextBox.Name = "onThisDayRichTextBox";
+            this.onThisDayRichTextBox.ReadOnly = true;
+            this.onThisDayRichTextBox.Size = new System.Drawing.Size(467, 383);
+            this.onThisDayRichTextBox.TabIndex = 8;
+            this.onThisDayRichTextBox.Text = "";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Location = new System.Drawing.Point(3, 48);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(467, 385);
+            this.richTextBox1.TabIndex = 4;
+            this.richTextBox1.Text = "";
             // 
             // label1
             // 
@@ -350,7 +376,7 @@
             this.label1.Location = new System.Drawing.Point(3, 2);
             this.label1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(467, 22);
+            this.label1.Size = new System.Drawing.Size(467, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Today\'s Suggested Article";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -363,30 +389,32 @@
             this.label2.Location = new System.Drawing.Point(476, 2);
             this.label2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(467, 22);
+            this.label2.Size = new System.Drawing.Size(467, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "On this day";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // richTextBox1
+            // titleLabel
             // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(3, 28);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(467, 405);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.titleLabel.Location = new System.Drawing.Point(3, 23);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(467, 23);
+            this.titleLabel.TabIndex = 6;
+            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // onThisDayRichTextBox
+            // dayLabel
             // 
-            this.onThisDayRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.onThisDayRichTextBox.Location = new System.Drawing.Point(476, 29);
-            this.onThisDayRichTextBox.Name = "onThisDayRichTextBox";
-            this.onThisDayRichTextBox.ReadOnly = true;
-            this.onThisDayRichTextBox.Size = new System.Drawing.Size(467, 403);
-            this.onThisDayRichTextBox.TabIndex = 3;
-            this.onThisDayRichTextBox.Text = "";
+            this.dayLabel.AutoSize = true;
+            this.dayLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.dayLabel.Location = new System.Drawing.Point(476, 23);
+            this.dayLabel.Name = "dayLabel";
+            this.dayLabel.Size = new System.Drawing.Size(467, 23);
+            this.dayLabel.TabIndex = 7;
+            this.dayLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BaseSearch
             // 
@@ -420,12 +448,16 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(619, 209);
+            this.dataGridView2.Location = new System.Drawing.Point(606, 209);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(320, 185);
             this.dataGridView2.TabIndex = 11;
+            this.dataGridView2.Visible = false;
             // 
             // treeView1
             // 
@@ -438,16 +470,20 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(249, 209);
+            this.dataGridView1.Location = new System.Drawing.Point(235, 209);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(320, 185);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(335, 185);
             this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.Visible = false;
             // 
             // keywordSearchbutton
             // 
-            this.keywordSearchbutton.Location = new System.Drawing.Point(555, 94);
+            this.keywordSearchbutton.Location = new System.Drawing.Point(541, 94);
             this.keywordSearchbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.keywordSearchbutton.Name = "keywordSearchbutton";
             this.keywordSearchbutton.Size = new System.Drawing.Size(143, 44);
@@ -458,7 +494,7 @@
             // 
             // titleSearchbutton
             // 
-            this.titleSearchbutton.Location = new System.Drawing.Point(249, 94);
+            this.titleSearchbutton.Location = new System.Drawing.Point(235, 94);
             this.titleSearchbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.titleSearchbutton.Name = "titleSearchbutton";
             this.titleSearchbutton.Size = new System.Drawing.Size(108, 44);
@@ -469,7 +505,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(249, 44);
+            this.textBox2.Location = new System.Drawing.Point(235, 45);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(449, 22);
@@ -508,6 +544,7 @@
             this.tabPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.articleTableLayoutPanel.ResumeLayout(false);
+            this.articleTableLayoutPanel.PerformLayout();
             this.BaseSearch.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
@@ -532,7 +569,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabControl BaseSearch;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.Button FavoriteButton;
@@ -552,6 +588,9 @@
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.Label dayLabel;
         private System.Windows.Forms.RichTextBox onThisDayRichTextBox;
     }
 }

@@ -219,6 +219,7 @@ namespace LuceneProject
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             string category = e.Node.Text;
+            dataGridView1.Visible = true;
             dataGridView1.DataSource = lemmaCategoryTableAdapter.GetDataByCategory(category);
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
@@ -231,12 +232,25 @@ namespace LuceneProject
 
         private void titleSearchbutton_Click(object sender, EventArgs e)
         {
+            if (textBox2.Text == "")
+            {
+                MessageBox.Show("Type something first!!");
+                return;
+            }
+
+            dataGridView2.Visible = true;
             dataGridView2.DataSource = lemmaTableAdapter.GetDataByTitleAndContent(textBox2.Text);
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
 
         private void keywordSearchbutton_Click(object sender, EventArgs e)
         {
+            if (textBox2.Text == "")
+            {
+                MessageBox.Show("Type something first!!");
+                return;
+            }
+
             string indexDir = @"C:\Users\Sotiris\Desktop\LuceneProject\LuceneProject\bin\Debug\Index";
             using (Indexer1 indexer = new Indexer1())
             {
@@ -342,10 +356,16 @@ namespace LuceneProject
             OleDbCommand cmd2 = new OleDbCommand("SELECT content FROM Media WHERE ID=?", con);
             cmd2.Parameters.AddWithValue("ID", rInt);
 
+            OleDbCommand cmd3 = new OleDbCommand("SELECT LemmaTitle FROM LemmaMedia WHERE MediaID=?",con);
+            cmd3.Parameters.AddWithValue("MediaID",rInt);
+
             try
             {
                 String content = (String)cmd2.ExecuteScalar();
                 richTextBox1.Text = content;
+
+                String title = (String)cmd3.ExecuteScalar();
+                titleLabel.Text = title;
             }
             catch (OleDbException exc)
             {
@@ -357,9 +377,10 @@ namespace LuceneProject
             }
 
             String date = DateTime.Now.ToString("dd.MM.yyy");
+            dayLabel.Text = date.ToString();
 
             //future work to draw from an API
-            onThisDayRichTextBox.Text = date.ToString() + "\n" +
+            onThisDayRichTextBox.Text =
                 "\n475 – Basiliscus became Byzantine Emperor after Zeno was forced to flee Constantinople." +
                 "\n1857 – A 7.9 Mw earthquake ruptured part of the San Andreas Fault in California and was felt as far east as Las Vegas." +
                 "\n1917 – First World War: Troops of the British Empire defeated Ottoman forces at the Battle of Rafa on the Sinai–Palestine border in present - day Rafah." +
@@ -367,19 +388,22 @@ namespace LuceneProject
                 "\n1992 – Radio astronomers Aleksander Wolszczan and Dale Frail announced the discovery of two planets orbiting the pulsar PSR B1257 + 12, the first definitive detection of exoplanets.";
 
 
+            //fill treeview dynamically from db
             DataTable dt = new DataTable();
-            OleDbCommand cmd3 = new OleDbCommand("SELECT * FROM Category", con);
+            OleDbCommand cmd4 = new OleDbCommand("SELECT * FROM Category", con);
             con.Open();
 
-            OleDbDataAdapter da = new OleDbDataAdapter(cmd3);
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd4);
             da.Fill(dt);
 
             try
             {
                 foreach (DataRow row in dt.Rows)
                 {
-                    TreeNode node = new TreeNode();
-                    node.Text = (string)row["categoryName"];
+                    TreeNode node = new TreeNode
+                    {
+                        Text = (string)row["CategoryName"]
+                    };
                     treeView1.Nodes.Add(node);
                 }
             }
