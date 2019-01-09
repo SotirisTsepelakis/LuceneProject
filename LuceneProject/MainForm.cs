@@ -125,7 +125,7 @@ namespace LuceneProject
 
             OleDbConnection con = new OleDbConnection
             {
-                ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString1
+                ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString2
             };
             con.Open();
             OleDbCommand check_title = new OleDbCommand("SELECT COUNT(*) FROM Lemma WHERE title ='" + textBox1.Text + "'", con);
@@ -175,7 +175,7 @@ namespace LuceneProject
             {
 
             }
-            System.IO.File.WriteAllLines(@"C:\Users\Sotiris\Desktop\LuceneProject\LuceneProject\bin\Debug\Index\Data\" + textBox1.Text + ".doc", richTextBox2.Lines);
+            System.IO.File.WriteAllLines(@"C:\Users\Stratos\source\repos\SotirisTsepelakis\LuceneProject\LuceneProject\bin\Debug\Index\Data\" + textBox1.Text + ".doc", richTextBox2.Lines);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -237,11 +237,11 @@ namespace LuceneProject
 
         private void keywordSearchbutton_Click(object sender, EventArgs e)
         {
-            string indexDir = @"C:\Users\Sotiris\Desktop\LuceneProject\LuceneProject\bin\Debug\Index";
+            string indexDir = @"C:\Users\Stratos\source\repos\SotirisTsepelakis\LuceneProject\LuceneProject\bin\Debug\Index";
             using (Indexer1 indexer = new Indexer1())
             {
                 indexer.IndexDirectory = indexDir;
-                indexer.DataDirectory = @"C:\Users\Sotiris\Desktop\LuceneProject\LuceneProject\bin\Debug\Index\Data";
+                indexer.DataDirectory = @"C:\Users\Stratos\source\repos\SotirisTsepelakis\LuceneProject\LuceneProject\bin\Debug\Index\Data";
                 indexer.Setup();
 
                 indexer.Index();
@@ -314,9 +314,12 @@ namespace LuceneProject
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            TreeNode node = new TreeNode();
+           
+
             OleDbConnection con = new OleDbConnection
             {
-                ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString1
+                ConnectionString = Properties.Settings.Default.CyclopediaBaseConnectionString2
             };
             con.Open();
             OleDbCommand cmd = new OleDbCommand("SELECT COUNT(*) FROM Lemma", con);
